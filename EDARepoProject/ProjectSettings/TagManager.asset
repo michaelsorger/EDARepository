@@ -4,15 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ground
-  - Crate
-  - Enemy
-  - Wall
-  - Obstacle
-  - Bullet
-  - BombPickup
-  - ExplosionFX
-  - HealthBar
+  - Damaging
   layers:
   - Default
   - TransparentFX
