@@ -6,14 +6,15 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    public float walkSpeed = 3;
-    public float jumpHeight = 10;
-    public float gravity = -35;
-    public int playerHealth = 15;
+    public float walkSpeed = 3f;
+    public float jumpHeight = 10f;
+    public float gravity = -35f;
+    public float maxHealth = 15f;
+    public GameObject healthBar;
 
     private CharacterController2D _controller;
     private AnimationController2D _animator;
-    private int currentHealth = 0;
+    private float currentHealth = 0f;
 
     private bool playerControl = true;
 	// Use this for initialization
@@ -21,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         _controller = gameObject.GetComponent<CharacterController2D>();
         _animator = gameObject.GetComponent<AnimationController2D>();
-        currentHealth = playerHealth;
+        currentHealth = maxHealth;
 
     }
 	
@@ -87,16 +88,25 @@ public class PlayerController : MonoBehaviour
         return velocity;
     }
 
-    private void playerDamage(int damage)
+    private void playerDamage(float damage)
     {
         currentHealth -= damage;
-        GameObject.Find("Health").GetComponent<Text>().text = currentHealth.ToString();
+        float normHealth = currentHealth / maxHealth; //if current health is 66/100 = .66f (normalized health for setHealth function)
+        setHealthBar(normHealth);
+        //GameObject.Find("Health").GetComponent<Text>().text = currentHealth.ToString();
 
         if(currentHealth <= 0)
         {
             playerControl = false;
+            setHealthBar(0f);
             _animator.setAnimation("playerDeath");
         }
-
     }
+
+    public void setHealthBar(float myHealth)
+    {
+        //myHealth needs to be value between 0-1, divide 
+        healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+    }
+
 }
