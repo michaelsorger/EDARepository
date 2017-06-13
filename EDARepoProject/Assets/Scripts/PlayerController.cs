@@ -6,6 +6,13 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+	public enum Direction {
+		left,
+		right,
+	}
+
+	private Direction playerFacing;
+
     //Members of this class
     public float walkSpeed = 3f;
     public float jumpHeight = 10f;
@@ -15,7 +22,8 @@ public class PlayerController : MonoBehaviour
     public string horizontalCtrl = "Horizontal_p1";
     public string jumpButton = "Jump_p1";
     public string fireButton = "Fire1_p1";
-    public Rigidbody bulletPrefab;
+    public Rigidbody2D bulletPrefab;
+	public Transform bulletSpawn;
     public GameObject gameOverPanel;
 
     //Internals
@@ -32,6 +40,7 @@ public class PlayerController : MonoBehaviour
         _controller = gameObject.GetComponent<CharacterController2D>();
         _animator = gameObject.GetComponent<AnimationController2D>();
         currentHealth = maxHealth;
+		playerFacing = Direction.left;
     }
 	
 	// Update is called once per frame
@@ -48,7 +57,6 @@ public class PlayerController : MonoBehaviour
             // Debug.Log(playerCtrl.getPlayerDirection().ToString());
             if (Time.time >= cooldown)
             {
-
                 if (Input.GetAxis(fireButton) > 0)
                 {
                     Shoot();
@@ -81,7 +89,7 @@ public class PlayerController : MonoBehaviour
                 _animator.setAnimation("playerRun");
             }
             _animator.setFacing("Left");
-            playerDirection = "left";
+			playerFacing = Direction.left;
         }
         else if (Input.GetAxis(horizontal) > 0)
         {
@@ -91,7 +99,7 @@ public class PlayerController : MonoBehaviour
                 _animator.setAnimation("playerRun");
             }
             _animator.setFacing("Right");
-            playerDirection = "right";
+			playerFacing = Direction.right;
         }
         else
         {
@@ -124,35 +132,33 @@ public class PlayerController : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
     }
-    
-    public string getPlayerDirection()
-    {
-        return playerDirection;
-    }
-
+ 
     public void setHealthBar(float myHealth)
     {
-        //myHealth needs to be value between 0-1, divide 
+        //myHealth needs to be value between 0-1, thats why we transformed above to use localScale
         healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
     }
 
-    void Shoot()
+    private void Shoot()
     {
         // Debug.Log("Started bullet a shot!");
         //if the player is facing to the right.
-        if (this.getPlayerDirection() == "right")
-        {
-            Debug.Log("Got here!");
-            Rigidbody bPrefab = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as Rigidbody;
-            bPrefab.GetComponent<Rigidbody>().AddForce(Vector3.right * 500);
+		if (playerFacing == Direction.right)
+        {            
+			Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+			Debug.Log("Got here!");
+			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right*500, ForceMode2D.Force);
+			Debug.Log("Got here2!");
 
             cooldown = Time.time + attackSpeed;
         }
         else
         {
+			Debug.Log("Got here3!");
             //otherwise we are facing left
-            Rigidbody bPrefab = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 180f))) as Rigidbody;
-            bPrefab.GetComponent<Rigidbody>().AddForce(Vector3.left * 500);
+			Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.left*500, ForceMode2D.Force);
+			Debug.Log ("Got here4!");
 
             cooldown = Time.time + attackSpeed;
         }
