@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //Members of this class
     public float walkSpeed = 3f;
     public float jumpHeight = 10f;
     public float gravity = -35f;
@@ -13,12 +14,17 @@ public class PlayerController : MonoBehaviour
     public GameObject healthBar;
     public string horizontalCtrl = "Horizontal_p1";
     public string jumpButton = "Jump_p1";
-    public string fireButton = "Fire_p1";
+    public string fireButton = "Fire1_p1";
+    public Rigidbody bulletPrefab;
+    public GameObject gameOverPanel;
 
+    //Internals
+    private float attackSpeed = .5f;
+    private float cooldown = 0f;
     private CharacterController2D _controller;
     private AnimationController2D _animator;
     private float currentHealth = 0f;
-
+    private string playerDirection = "";
     private bool playerControl = true;
 	// Use this for initialization
 	void Start ()
@@ -26,7 +32,6 @@ public class PlayerController : MonoBehaviour
         _controller = gameObject.GetComponent<CharacterController2D>();
         _animator = gameObject.GetComponent<AnimationController2D>();
         currentHealth = maxHealth;
-
     }
 	
 	// Update is called once per frame
@@ -34,11 +39,21 @@ public class PlayerController : MonoBehaviour
     {
         if (playerControl)
         {
-            Vector3 velocity = playerInput(horizontalCtrl, jumpButton, fireButton);
+            Vector3 velocity = playerInput(horizontalCtrl, jumpButton);
             velocity.x *= 0.90f;
             velocity.y += gravity * Time.deltaTime;
 
             _controller.move(velocity * Time.deltaTime);
+
+            // Debug.Log(playerCtrl.getPlayerDirection().ToString());
+            if (Time.time >= cooldown)
+            {
+
+                if (Input.GetAxis(fireButton) > 0)
+                {
+                    Shoot();
+                }
+            }
         }
         
         //GameObject.Find("Health").GetComponent<Text>().text = currentHealth.ToString();
@@ -52,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private Vector3 playerInput(string horizontal, string jump, string fire)
+    private Vector3 playerInput(string horizontal, string jump)
     {
         Vector3 velocity = _controller.velocity;
 
@@ -66,6 +81,7 @@ public class PlayerController : MonoBehaviour
                 _animator.setAnimation("playerRun");
             }
             _animator.setFacing("Left");
+            playerDirection = "left";
         }
         else if (Input.GetAxis(horizontal) > 0)
         {
@@ -75,6 +91,7 @@ public class PlayerController : MonoBehaviour
                 _animator.setAnimation("playerRun");
             }
             _animator.setFacing("Right");
+            playerDirection = "right";
         }
         else
         {
@@ -88,6 +105,7 @@ public class PlayerController : MonoBehaviour
             //play jump animation
             _animator.setAnimation("playerJump");
         }
+        //if fire button (space or left mouse) is pressed
         return velocity;
     }
 
@@ -103,7 +121,13 @@ public class PlayerController : MonoBehaviour
             playerControl = false;
             setHealthBar(0f);
             _animator.setAnimation("playerDeath");
+            gameOverPanel.SetActive(true);
         }
+    }
+    
+    public string getPlayerDirection()
+    {
+        return playerDirection;
     }
 
     public void setHealthBar(float myHealth)
@@ -112,4 +136,27 @@ public class PlayerController : MonoBehaviour
         healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
     }
 
+    void Shoot()
+    {
+        // Debug.Log("Started bullet a shot!");
+        //if the player is facing to the right.
+        if (this.getPlayerDirection() == "right")
+        {
+            Debug.Log("Got here!");
+            Rigidbody bPrefab = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as Rigidbody;
+            bPrefab.GetComponent<Rigidbody>().AddForce(Vector3.right * 500);
+
+            cooldown = Time.time + attackSpeed;
+        }
+        else
+        {
+            //otherwise we are facing left
+            Rigidbody bPrefab = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(new Vector3(0, 0, 180f))) as Rigidbody;
+            bPrefab.GetComponent<Rigidbody>().AddForce(Vector3.left * 500);
+
+            cooldown = Time.time + attackSpeed;
+        }
+
+
+    }
 }
