@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float gravity = -35f;
     public float maxHealth = 15f;
     public GameObject healthBar;
+    public string horizontalCtrl = "Horizontal_p1";
+    public string jumpButton = "Jump_p1";
+    public string fireButton = "Fire_p1";
 
     private CharacterController2D _controller;
     private AnimationController2D _animator;
@@ -31,7 +34,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerControl)
         {
-            Vector3 velocity = playerInput();
+            Vector3 velocity = playerInput(horizontalCtrl, jumpButton, fireButton);
             velocity.x *= 0.90f;
             velocity.y += gravity * Time.deltaTime;
 
@@ -49,13 +52,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private Vector3 playerInput()
+    private Vector3 playerInput(string horizontal, string jump, string fire)
     {
         Vector3 velocity = _controller.velocity;
 
         //velocity.x = 0;
 
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis(horizontal) < 0)
         {
             velocity.x = -walkSpeed;
             if (_controller.isGrounded)
@@ -64,7 +67,7 @@ public class PlayerController : MonoBehaviour
             }
             _animator.setFacing("Left");
         }
-        else if (Input.GetAxis("Horizontal") > 0)
+        else if (Input.GetAxis(horizontal) > 0)
         {
             velocity.x = walkSpeed;
             if (_controller.isGrounded)
@@ -79,7 +82,7 @@ public class PlayerController : MonoBehaviour
             _animator.setAnimation("playerIdle");
         }
 
-        if (Input.GetAxis("Jump") > 0 && _controller.isGrounded)
+        if (Input.GetAxis(jump) > 0 && _controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             //play jump animation
