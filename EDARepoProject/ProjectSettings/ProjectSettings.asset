@@ -477,7 +477,7 @@ PlayerSettings:
     Collab: 0
     ErrorHub: 0
     Hub: 0
-    UNet: 0
+    UNet: 1
   cloudProjectId: a2312529-65af-4803-8819-2e73405737f1
   projectName: EDARepoProject
   organizationId: michaelsorgrr

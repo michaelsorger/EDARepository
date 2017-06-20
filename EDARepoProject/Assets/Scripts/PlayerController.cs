@@ -27,13 +27,14 @@ public class PlayerController : MonoBehaviour
     public GameObject gameOverPanel;
 
     //Internals
-    private float attackSpeed = .5f;
+    private float attackSpeed = 1f;
     private float cooldown = 0f;
     private CharacterController2D _controller;
     private AnimationController2D _animator;
     private float currentHealth = 0f;
     private string playerDirection = "";
     private bool playerControl = true;
+    private bool shootControl = true;
 	// Use this for initialization
 	void Start ()
     {
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (Input.GetAxis(fireButton) > 0)
                 {
-                    Shoot();
+                    _animator.setAnimation("CrossBowShoot");
                 }
             }
         }
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
             velocity.x = -walkSpeed;
             if (_controller.isGrounded)
             {
-                _animator.setAnimation("playerRun");
+                _animator.setAnimation("CrossBowRun");
             }
             _animator.setFacing("Left");
 			playerFacing = Direction.left;
@@ -96,22 +97,26 @@ public class PlayerController : MonoBehaviour
             velocity.x = walkSpeed;
             if (_controller.isGrounded)
             {
-                _animator.setAnimation("playerRun");
+                _animator.setAnimation("CrossBowRun");
             }
             _animator.setFacing("Right");
 			playerFacing = Direction.right;
         }
+        else if(_animator.getAnimation() == "CrossBowShoot")
+        {
+
+        }
         else
         {
             //play idle anim
-            _animator.setAnimation("playerIdle");
+            _animator.setAnimation("CrossBowIdle");
         }
 
         if (Input.GetAxis(jump) > 0 && _controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             //play jump animation
-            _animator.setAnimation("playerJump");
+            _animator.setAnimation("CrossBowIdle");
         }
         //if fire button (space or left mouse) is pressed
         return velocity;
@@ -128,7 +133,7 @@ public class PlayerController : MonoBehaviour
         {
             playerControl = false;
             setHealthBar(0f);
-            _animator.setAnimation("playerDeath");
+            _animator.setAnimation("CrossBowIdle");
             gameOverPanel.SetActive(true);
         }
     }
@@ -144,25 +149,26 @@ public class PlayerController : MonoBehaviour
         // Debug.Log("Started bullet a shot!");
         //if the player is facing to the right.
 		if (playerFacing == Direction.right)
-        {            
-			Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
-			Debug.Log("Got here!");
+        {
+            Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
 			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right*500, ForceMode2D.Force);
-			Debug.Log("Got here2!");
 
             cooldown = Time.time + attackSpeed;
         }
         else
         {
-			Debug.Log("Got here3!");
             //otherwise we are facing left
-			Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+            Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
 			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.left*500, ForceMode2D.Force);
-			Debug.Log ("Got here4!");
+            
 
             cooldown = Time.time + attackSpeed;
         }
+   }
 
-
+    public void fireCrossBow()
+    {
+        Debug.Log("Fire CrossBow called");
+        Shoot();
     }
 }

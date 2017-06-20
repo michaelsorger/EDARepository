@@ -44,4 +44,11 @@ public class AnimationController2D : MonoBehaviour {
 			}
 		}
 	}
+
+    public void getFrame(string animationName)
+    {  
+        AnimatorStateInfo animationState = _animator.GetCurrentAnimatorStateInfo(0);
+        AnimatorClipInfo[] myAnimatorClip = _animator.GetCurrentAnimatorClipInfo(0);
+        float myTime = myAnimatorClip[0].clip.length * animationState.normalizedTime;
+    }
 }
