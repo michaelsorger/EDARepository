@@ -133,7 +133,6 @@ public class PlayerController : MonoBehaviour
             playerControl = false;
             setHealthBar(0f);
             _animator.setAnimation("CrossBowIdle");
-            gameOverPanel.SetActive(true);
         }
     }
  
