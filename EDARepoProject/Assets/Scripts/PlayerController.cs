@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public string fireButton = "Fire1_p1";
     public Rigidbody2D bulletPrefab;
 	public Transform bulletSpawn;
-    public GameObject gameOverPanel;
+   // public GameObject gameOverPanel;
 
     //Internals
     private float attackSpeed = 1f;
@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
     private float currentHealth = 0f;
     private string playerDirection = "";
     private bool playerControl = true;
-    private bool shootControl = true;
 	// Use this for initialization
 	void Start ()
     {
