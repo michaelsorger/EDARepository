@@ -18,10 +18,10 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 10f;
     public float gravity = -35f;
     public float maxHealth = 15f;
-    public GameObject healthBar;
     public string horizontalCtrl = "Horizontal_p1";
     public string jumpButton = "Jump_p1";
     public string fireButton = "Fire1_p1";
+   // public GameObject HealthBar;
     public Rigidbody2D bulletPrefab;
 	public Transform bulletSpawn;
    // public GameObject gameOverPanel;
@@ -29,18 +29,25 @@ public class PlayerController : MonoBehaviour
     //Internals
     private float attackSpeed = 1f;
     private float cooldown = 0f;
-    private CharacterController2D _controller;
-    private AnimationController2D _animator;
+    private CharacterController2D _controller; //reference to the controller script
+    private AnimationController2D _animator; //reference to the animator script
+    private HealthBarScript _healthBarScript; //reference to the health bar script
     private float currentHealth = 0f;
-    private string playerDirection = "";
     private bool playerControl = true;
+    private GameObject healthBar; //this is for the entire health bar (border, red, green)
+    private GameObject greenBar; //this is for just for scaling the GREEN portion of the health bar down)
+    //private GameObject _health = null;
 	// Use this for initialization
 	void Start ()
     {
         _controller = gameObject.GetComponent<CharacterController2D>();
         _animator = gameObject.GetComponent<AnimationController2D>();
+        _healthBarScript = gameObject.GetComponent<HealthBarScript>();
         currentHealth = maxHealth;
 		playerFacing = Direction.left;
+        greenBar = GetComponentInChildren<Canvas>().transform.FindChild("Border").FindChild("Bar").gameObject;
+        healthBar = GetComponentInChildren<Canvas>().gameObject;
+
     }
 	
 	// Update is called once per frame
@@ -48,6 +55,10 @@ public class PlayerController : MonoBehaviour
     {
         if (playerControl)
         {
+            //stop health from rotating:
+            
+
+            //_healthBarScript.updateHealthBarPosition(HealthBar);
             Vector3 velocity = playerInput(horizontalCtrl, jumpButton);
             velocity.x *= 0.90f;
             velocity.y += gravity * Time.deltaTime;
@@ -125,23 +136,17 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         float normHealth = currentHealth / maxHealth; //if current health is 66/100 = .66f (normalized health for setHealth function)
-        setHealthBar(normHealth);
+        _healthBarScript.setHealthBar(normHealth, greenBar);
         //GameObject.Find("Health").GetComponent<Text>().text = currentHealth.ToString();
 
         if(currentHealth <= 0)
         {
             playerControl = false;
-            setHealthBar(0f);
+            _healthBarScript.setHealthBar(0f, greenBar);
             _animator.setAnimation("CrossBowIdle");
         }
     }
  
-    public void setHealthBar(float myHealth)
-    {
-        //myHealth needs to be value between 0-1, thats why we transformed above to use localScale
-        healthBar.transform.localScale = new Vector3(myHealth, healthBar.transform.localScale.y, healthBar.transform.localScale.z);
-    }
-
     private void Shoot()
     {
         // Debug.Log("Started bullet a shot!");
