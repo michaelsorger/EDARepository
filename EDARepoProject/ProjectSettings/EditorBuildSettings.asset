@@ -7,3 +7,25 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/Scenes/Level.unity
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/TestUIScene.unity
+    guid: 2cfb23863445d3942980d3a7ee2adf54
+  - enabled: 1
+    path: Assets/Scenes/BiosScene.unity
+    guid: ac669361dc3c61d4b8d3fbdf8450d15b
+  - enabled: 1
+    path: Assets/Scenes/ControlsScene.unity
+    guid: ec95e758c6883384e81040fed7c0251b
+  - enabled: 1
+    path: Assets/Scenes/playground.unity
+    guid: 99351f4e3340cda40b014d15bfde6404
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 993c0c93b778a434e96041ce058f1768
+  - enabled: 1
+    path: Assets/Scenes/Map2.unity
+    guid: 874998ad5444b9e4fb895eeb2246d66d
+  - enabled: 1
+    path: Assets/Scenes/Map3.unity
+    guid: 3451cc719c0293c4da79c7b88c188ad6

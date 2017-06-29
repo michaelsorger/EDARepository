@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         _healthBarScript = gameObject.GetComponent<HealthBarScript>();
         currentHealth = maxHealth;
 		playerFacing = Direction.left;
-        greenBar = GetComponentInChildren<Canvas>().transform.FindChild("Border").FindChild("Bar").gameObject;
+        greenBar = GetComponentInChildren<Canvas>().transform.Find("Border").Find("Bar").gameObject;
         healthBar = GetComponentInChildren<Canvas>().gameObject;
 
     }
