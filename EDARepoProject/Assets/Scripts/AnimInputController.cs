@@ -24,7 +24,9 @@ public class AnimInputController : MonoBehaviour
 	//Setting player direction
 	private string _currentDirection = "Right";
 
-	private Vector3 velocity = new Vector3(0, 0, 0);
+    private float move = 0f;
+
+    private Vector3 velocity = new Vector3(0, 0, 0);
 
 	void Start()
 	{
@@ -39,10 +41,18 @@ public class AnimInputController : MonoBehaviour
 
 		attackAxisf = Input.GetAxis("Right Trigger");
 		_anim.SetFloat("attackF", attackAxisf);
-		//Debug.Log(_anim.GetFloat("attackF"));
 
 		jumpAxisf = Input.GetAxis("A");
-		specialAxisf = Input.GetAxis("B");
+        if(jumpAxisf > 0)
+        {
+            _anim.SetBool("isJumping", true);
+        }
+        else
+        {
+            _anim.SetBool("isJumping", false);
+        }
+
+        specialAxisf = Input.GetAxis("B");
 
 		string statename = GetCurrentAnimatorStateName();  //function to return current state of animator
 		if (statename != oldStateName)
@@ -55,21 +65,8 @@ public class AnimInputController : MonoBehaviour
 			case "Idle":
 				velocity.x = 0;
 				velocity.y += gravity * Time.deltaTime; //add gravity
-														//if input is Jump
-				if (_controller.isGrounded)
-				{
-					velocity.y = 0;
-
-					if (jumpAxisf > 0)
-					{
-						//jump
-
-						velocity.y = jumpHeight; // Mathf.Sqrt(2f * jumpHeight * -gravity);
-						_anim.SetBool("isIdling", true); //idle animation when jump
-					}
-				}
-
-				if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
+                                                        //if input is Jump while in idle
+                if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
 				{
 					velocity.y = 0;
 				}
@@ -79,73 +76,105 @@ public class AnimInputController : MonoBehaviour
 				break;
 
 			case "Run":
-
 				//Vector3 velocity = _controller.velocity; //charactercontroller2d velocity
 				//Vector3 velocity = new Vector3(movementAxisf, 0, 0);
 				velocity.x = movementAxisf * maxSpeed;
 
-				//if input is Jump
 				if (_controller.isGrounded)
 				{
 					velocity.y = 0f;
 				}
-				if (jumpAxisf > 0 && _controller.isGrounded)
-				{
-					//jump
-					velocity.y = jumpHeight; //Mathf.Sqrt(2f * jumpHeight * -gravity);
-					_anim.SetBool("isIdling", true); //idle animation when jump
-				}
-				//input is special movement
-				else if (specialAxisf > 0) //&& cooldown probably
-				{
-					//spec
-					//write code to add in a special movement ability
-					//dodge? roll? dash?
-				}
+				
 				//input is run
+					//move
+				move = movementAxisf; //get xBox controller input value
+
+				_anim.SetFloat("runF", move); //set the float, runs through set conditions from animator
+            
+                //check player facing
+                if (move < -0.5f) //left
+				{
+					setFacing("Left");
+				}
+				else if (move > 0.5f) //right
+				{
+						setFacing("Right");
+				}
 				else
 				{
-					//move
-					float move = movementAxisf; //get xBox controller input value
-
-					_anim.SetFloat("runF", move); //set the float, runs through set conditions from animator
-				
-					//check player facing
-					if (move < -0.5f) //left
-					{
-						setFacing("Left");
-					}
-					else if (move > 0.5f) //right
-					{
-						setFacing("Right");
-					}
-					else
-					{
-						//Do nothing (I have this because controller always sending data)
-					}
-
-					//move my player
-					velocity.x *= 0.90f; //friction calc
-					if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
-					{
-						velocity.y = 0;
-					}
-					velocity.y += gravity * Time.deltaTime; //add gravity
+					//Do nothing (I have this because controller always sending data)
 				}
+
+				//move my player
+				velocity.x *= 0.90f; //friction calc
+				if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
+				{
+					velocity.y = 0;
+				}
+				velocity.y += gravity * Time.deltaTime; //add gravity
+				
+
 				_controller.move(velocity * Time.deltaTime); //move my guy based on jumped/fell
 				break;
 
 			case "Attack":
-				if (attackAxisf > 0)
-				{
-					_anim.SetBool("isAttacking", true);
-				}
-				velocity.x *= 0.90f; //friction calc
-				velocity.y += gravity * Time.deltaTime; //add gravity
+                //I can move when I fire
+                if (_controller.isGrounded)
+                {
+                    velocity.y = 0f;
+                }
+                velocity.x = movementAxisf * maxSpeed;
+
+                //move
+                move = movementAxisf; //get xBox controller input value
+
+                _anim.SetFloat("runF", move); //set the float, runs through set conditions from animator
+
+                //check player facing
+                if (move < -0.5f) //left
+                {
+                    setFacing("Left");
+                }
+                else if (move > 0.5f) //right
+                {
+                    setFacing("Right");
+                }
+                else
+                {
+                    //Do nothing (I have this because controller always sending data)
+                }
+
+                //move my player
+                velocity.x *= 0.90f; //friction calc
+                if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
+                {
+                    velocity.y = 0;
+                }
+
+                velocity.y += gravity * Time.deltaTime; //add gravity
 				_controller.move(velocity * Time.deltaTime); //jump my guy
 				break;
-			case "":
-				break;
+
+			case "Jump":
+                //if input is Jump
+                if (_controller.isGrounded)
+                {
+                    velocity.y = 0f;
+                }
+                if (jumpAxisf > 0 && _controller.isGrounded)
+                {
+                    //jump
+                    velocity.y = jumpHeight; //Mathf.Sqrt(2f * jumpHeight * -gravity);
+                    _anim.SetBool("isJumping", true);
+                }
+                if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
+                {
+                    velocity.y = 0;
+                }
+                velocity.y += gravity * Time.deltaTime; //add gravity
+                _controller.move(velocity * Time.deltaTime); //move my guy based on jumped/fell
+              //  _anim.SetBool("isJumping", false); //idle animation when jump
+                break;
 		}
 	}
 
@@ -170,7 +199,13 @@ public class AnimInputController : MonoBehaviour
 			sName = "Attack";
 			return sName;
 		}
-		else
+        else if (_anim.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        {
+            //Do something if this particular state is palying
+            sName = "Jump";
+            return sName;
+        }
+        else
 		{
 			return sName;
 		}
