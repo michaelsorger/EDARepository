@@ -11,9 +11,14 @@ public class AnimInputController : MonoBehaviour
 	public float gravity = -35f;
 	public float maxSpeed = 3f;
 
-	//Control settings
-	//Gravity = 0, dead = 0.19, sensitivity = 1 
-	private float movementAxisf; //X Axis (left joystick)
+    public string Left_Joystick_Axis = "";
+    public string Right_Trigger_Axis = "";
+    public string A_Axis = "";
+    public string B_Axis = "";
+
+    //Control settings
+    //Gravity = 0, dead = 0.19, sensitivity = 1 
+    private float movementAxisf; //X Axis (left joystick)
 	private float attackAxisf; //3rd Axis (right trigger)
 	private float jumpAxisf; //Joystick button 0	(A)		float because return value 0 or !0
 	private float specialAxisf; //Joystick button 1 (B)  float because return value 0 or !0
@@ -22,7 +27,7 @@ public class AnimInputController : MonoBehaviour
 	private CharacterController2D _controller;
 	private string oldStateName = "";
 	//Setting player direction
-	private string _currentDirection = "Right";
+	private string _currentDirection = "Left";
 
     private float move = 0f;
 
@@ -35,14 +40,14 @@ public class AnimInputController : MonoBehaviour
 	}
 	void Update()
 	{
-		movementAxisf = Input.GetAxis("Left Joystick");
+		movementAxisf = Input.GetAxis(Left_Joystick_Axis);
 		_anim.SetFloat("runF", movementAxisf);
 		//Debug.Log(_anim.GetFloat("runF"));
 
-		attackAxisf = Input.GetAxis("Right Trigger");
+		attackAxisf = Input.GetAxis(Right_Trigger_Axis);
 		_anim.SetFloat("attackF", attackAxisf);
 
-		jumpAxisf = Input.GetAxis("A");
+		jumpAxisf = Input.GetAxis(A_Axis);
         if(jumpAxisf > 0)
         {
             _anim.SetBool("isJumping", true);
@@ -52,7 +57,7 @@ public class AnimInputController : MonoBehaviour
             _anim.SetBool("isJumping", false);
         }
 
-        specialAxisf = Input.GetAxis("B");
+        specialAxisf = Input.GetAxis(B_Axis);
 
 		string statename = GetCurrentAnimatorStateName();  //function to return current state of animator
 		if (statename != oldStateName)
