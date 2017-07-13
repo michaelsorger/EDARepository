@@ -29,3 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map3.unity
     guid: 3451cc719c0293c4da79c7b88c188ad6
+  - enabled: 1
+    path: Assets/Scenes/Character Select Screen.unity
+    guid: 00000000000000000000000000000000
