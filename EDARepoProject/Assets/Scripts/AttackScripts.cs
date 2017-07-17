@@ -8,10 +8,11 @@ public class AttackScripts : MonoBehaviour {
 	public Transform bulletSpawn;
     public BoxCollider2D batCollider;
 
- //   private float attackSpeed = 1f;
-	private AnimInputController _inputController;
+    //   private float attackSpeed = 1f;
+    private AnimInputController _inputController;
     private Vector2 originalBatSize;
     private Vector2 originalBatOffset;
+    private Rigidbody2D bPrefab;
 
     // Use this for initialization
     void Start ()
@@ -25,35 +26,36 @@ public class AttackScripts : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-        
+
     }
 
 	private void Shoot()
 	{
-		// Debug.Log("Started bullet a shot!");
-		//if the player is facing to the right.
-		if (_inputController.getFacing() == "Right")
+        // Debug.Log("Started bullet a shot!");
+        //if the player is facing to the right.
+        if (_inputController.getFacing() == "Right")
 		{
-			Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+			bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
 			bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500, ForceMode2D.Force);
 
-			//cooldown = Time.time + attackSpeed;
-		}
+            //cooldown = Time.time + attackSpeed;
+        }
 		else
 		{
 			//otherwise we are facing left
-			Rigidbody2D bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+			bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
 			bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500, ForceMode2D.Force);
-
-			//cooldown = Time.time + attackSpeed;
-		}
-	}
+            //cooldown = Time.time + attackSpeed;
+        }
+        
+    }
 
 	public void fireCrossBow()
 	{
 		Debug.Log("Fire CrossBow called22");
 		Shoot();
 	}
+
 
     public void swingBaseBallBat()
     {
@@ -76,5 +78,11 @@ public class AttackScripts : MonoBehaviour {
         Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
         batCollider.enabled = true;
     }
+
+    public void fireMachineGun()
+    {
+        Shoot();
+    }
+
 
 }
