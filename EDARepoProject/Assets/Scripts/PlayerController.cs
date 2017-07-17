@@ -14,10 +14,10 @@ public class PlayerController : MonoBehaviour
     private float currentHealth = 0f;
 	private float maxHealth = 15f;
     private bool playerControl = true;
-    private GameObject healthBar; //this is for the entire health bar (border, red, green)
+    //private GameObject healthBar; //this is for the entire health bar (border, red, green)
     private GameObject greenBar; //this is for just for scaling the GREEN portion of the health bar down)
-    private Vector2 knockRight = new Vector2(1, 1);
-    private Vector2 knockLeft = new Vector2(-1, 1);
+    //private Vector2 knockRight = new Vector2(1, 1);
+    //private Vector2 knockLeft = new Vector2(-1, 1);
     //private GameObject _health = null;
 	// Use this for initialization
 	void Start ()
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         //_attackScripts = gameObject.GetComponent<AttackScripts>();
         currentHealth = maxHealth;
         greenBar = GetComponentInChildren<Canvas>().transform.Find("Border").Find("Bar").gameObject;
-        healthBar = GetComponentInChildren<Canvas>().gameObject;
+       // healthBar = GetComponentInChildren<Canvas>().gameObject;
     }
 	
 	// Update is called once per frame

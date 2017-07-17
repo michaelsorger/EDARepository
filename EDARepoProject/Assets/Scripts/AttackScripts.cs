@@ -8,7 +8,7 @@ public class AttackScripts : MonoBehaviour {
 	public Transform bulletSpawn;
     public BoxCollider2D batCollider;
 
-    private float attackSpeed = 1f;
+ //   private float attackSpeed = 1f;
 	private AnimInputController _inputController;
     private Vector2 originalBatSize;
     private Vector2 originalBatOffset;
