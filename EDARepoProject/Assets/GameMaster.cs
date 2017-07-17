@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMaster : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class GameMaster : MonoBehaviour
+{
+    public GameObject level;
+    public GameObject character1;
+    public GameObject character2;
+    public GameObject character3;
+    public GameObject character4;
 }
