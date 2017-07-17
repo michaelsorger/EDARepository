@@ -9,6 +9,8 @@ TagManager:
   - Red Brute
   - Blue Brute
   - Blue Brute Bat
+  - Red Gunner
+  - Blue Gunner
   layers:
   - Default
   - TransparentFX
