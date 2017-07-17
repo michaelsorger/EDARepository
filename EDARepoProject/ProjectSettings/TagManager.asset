@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Damaging
+  - Red Brute Bat
+  - Red Brute
+  - Blue Brute
+  - Blue Brute Bat
   layers:
   - Default
   - TransparentFX

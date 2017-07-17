@@ -156,6 +156,9 @@ public class AnimInputController : MonoBehaviour
                     velocity.y = 0;
                 }
 
+
+                //attack
+
                 velocity.y += gravity * Time.deltaTime; //add gravity
 				_controller.move(velocity * Time.deltaTime); //jump my guy
 				break;
