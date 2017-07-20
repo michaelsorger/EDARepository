@@ -7,4 +7,12 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: AmazonAC_Blue
   m_Controller: {fileID: 9100000, guid: 68d3b4e1fbec22d4c962d2a3f0aef991, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95820818e8bf6fb4383147c6178b7b9f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f6e5c54889c7fc8449de2065d4217bdd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d31b406e6e801634d8f31f468c0f95ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0e8c5ce7af4b5d84796097c38e5d4b24, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 36f9bcc8cc1c5cd47bb9edd61db718c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c19ee4f7a726e5648b828b56c383b7a0, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 774b35ed787958240813e9f0499c0012, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c19ee4f7a726e5648b828b56c383b7a0, type: 2}
