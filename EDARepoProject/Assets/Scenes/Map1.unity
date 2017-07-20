@@ -1281,48 +1281,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
---- !u!1001 &449559834
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.78
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4063458016237998, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: aaf24263df240bd45be38ac7eb6b86b8, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &454100823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3317,11 +3275,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3869540cd4db3634fb8800163b11042c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnDelay: 0
+  playerList: []
   level: {fileID: 625764858}
   character1: {fileID: 217921972}
+  loc1: {fileID: 0}
   character2: {fileID: 1374593850}
+  loc2: {fileID: 0}
   character3: {fileID: 369279109}
+  loc3: {fileID: 0}
   character4: {fileID: 550341883}
+  loc4: {fileID: 0}
+  winScreenUI: {fileID: 0}
+  redWin: {fileID: 0}
+  blueWin: {fileID: 0}
 --- !u!4 &1643386651
 Transform:
   m_ObjectHideFlags: 0

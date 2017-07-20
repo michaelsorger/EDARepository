@@ -7,8 +7,8 @@ public class BiosButtonScript : MonoBehaviour
 {
 	public void NewGameButton(string newGameLevel)
 	{
-		SceneManager.LoadScene(newGameLevel);
-	}
+        UnityEngine.SceneManagement.SceneManager.LoadScene(newGameLevel);
+    }
 
 
 }

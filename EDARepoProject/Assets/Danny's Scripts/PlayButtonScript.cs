@@ -7,7 +7,8 @@ public class PlayButtonScript : MonoBehaviour
 {
 	public void NewGameButton(string newGameLevel)
 	{
-		SceneManager.LoadScene (newGameLevel);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(newGameLevel);
+		
 	}
 
  	
