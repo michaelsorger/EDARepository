@@ -1,25 +1,10 @@
 fileFormatVersion: 2
 guid: 3869540cd4db3634fb8800163b11042c
-timeCreated: 1500408313
+timeCreated: 1500277963
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - level: {fileID: 1437151097519452, guid: e3d532701df581f48bfb3fcbba104a35, type: 2}
-  - character1: {fileID: 1815851504559212, guid: 518f86149a8bb014dbcefe16775f3425,
-      type: 2}
-  - loc1: {instanceID: 0}
-  - character2: {fileID: 1534087240828918, guid: 6f158a211817ac2408a86f5d85b48672,
-      type: 2}
-  - loc2: {instanceID: 0}
-  - character3: {fileID: 1254341821617934, guid: 7da8d471ee563584ba2f9e5a2e470753,
-      type: 2}
-  - loc3: {instanceID: 0}
-  - character4: {instanceID: 0}
-  - loc4: {instanceID: 0}
-  - winScreenUI: {instanceID: 0}
-  - redWin: {instanceID: 0}
-  - blueWin: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

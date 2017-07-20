@@ -1,5 +1,4 @@
-﻿//Michael Sorger Code
-
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,30 +11,32 @@ public class PlayerController : MonoBehaviour
     //private float cooldown = 0f;
     private HealthBarScript _healthBarScript; //reference to the health bar script
     //private AttackScripts _attackScripts;
-    public float currentHealth = 0f;
-	public float maxHealth = 15f;
+    private float currentHealth = 0f;
+	private float maxHealth = 15f;
     private bool playerControl = true;
-    //public GameObject HealthBar; //this is for the entire health bar (border, red, green)
+    //private GameObject healthBar; //this is for the entire health bar (border, red, green)
     private GameObject greenBar; //this is for just for scaling the GREEN portion of the health bar down)
     //private Vector2 knockRight = new Vector2(1, 1);
     //private Vector2 knockLeft = new Vector2(-1, 1);
     //private GameObject _health = null;
 	// Use this for initialization
-    private Transform initialTransform;
-    private Vector3 initialPlayerSpawn;
-	void Awake ()
+	void Start ()
     {
         _healthBarScript = gameObject.GetComponent<HealthBarScript>();
+        //_attackScripts = gameObject.GetComponent<AttackScripts>();
         currentHealth = maxHealth;
         greenBar = GetComponentInChildren<Canvas>().transform.Find("Border").Find("Bar").gameObject;
-       // HealthBar = GetComponentInChildren<Canvas>().gameObject;
-        initialTransform = gameObject.GetComponent<Transform>();
-        initialPlayerSpawn = new Vector3(initialTransform.position.x, initialTransform.position.y, initialTransform.position.z);
+       // healthBar = GetComponentInChildren<Canvas>().gameObject;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if (playerControl == false)
+        {
+			Debug.Log("What should happen here");
+        }
+        
         //GameObject.Find("Health").GetComponent<Text>().text = currentHealth.ToString();
     }
 
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
         //runs into spike
         if(col.tag == "Damaging")
         {
-            playerDamage(3);            
+            playerDamage(5);            
         }
         else if(col.tag == "Red Brute Bat")
         {
@@ -67,12 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             playerControl = false;
             _healthBarScript.setHealthBar(0f, greenBar);
-            GameMaster.killPlayer(this.gameObject, gameObject.tag ,initialPlayerSpawn);
         }
-    }
-
-    public void playerInit()
-    {
-        playerDamage(0);
     }
 }

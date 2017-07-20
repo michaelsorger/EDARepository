@@ -1,6 +1,4 @@
-﻿//Michael Sorger code
-
-using Prime31;
+﻿using Prime31;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,7 +62,7 @@ public class AnimInputController : MonoBehaviour
 		string statename = GetCurrentAnimatorStateName();  //function to return current state of animator
 		if (statename != oldStateName)
 		{
-			//Debug.Log("statename = " + statename);
+			Debug.Log("statename = " + statename);
 			oldStateName = statename;
 		}
 		switch (statename)
@@ -167,7 +165,6 @@ public class AnimInputController : MonoBehaviour
 
 			case "Jump":
                 //if input is Jump
-                gameObject.GetComponent<AttackScripts>().batInactive();
                 if (_controller.isGrounded)
                 {
                     velocity.y = 0f;
