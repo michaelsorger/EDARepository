@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: d7b81d44ecef14741bdc7479cc2e4f4e
-timeCreated: 1500325330
+guid: abbfe83b3fcc0064a8a081945d9f4249
+timeCreated: 1500326077
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: AmazonianSpriteSheet_0
-    21300002: AmazonianSpriteSheet_1
-    21300004: AmazonianSpriteSheet_2
-    21300006: AmazonianSpriteSheet_3
-    21300008: AmazonianSpriteSheet_4
-    21300010: AmazonianSpriteSheet_5
-    21300012: AmazonianSpriteSheet_6
-    21300014: AmazonianSpriteSheet_7
-    21300016: AmazonianSpriteSheet_8
-    21300018: AmazonianSpriteSheet_9
-    21300020: AmazonianSpriteSheet_10
-    21300022: AmazonianSpriteSheet_11
-    21300024: AmazonianSpriteSheet_12
-    21300026: AmazonianSpriteSheet_13
-    21300028: AmazonianSpriteSheet_14
-    21300030: AmazonianSpriteSheet_15
-    21300032: AmazonianSpriteSheet_16
-    21300034: AmazonianSpriteSheet_17
-    21300036: AmazonianSpriteSheet_18
-    21300038: AmazonianSpriteSheet_19
-    21300040: AmazonianSpriteSheet_20
-    21300042: AmazonianSpriteSheet_21
-    21300044: AmazonianSpriteSheet_22
-    21300046: AmazonianSpriteSheet_23
-    21300048: AmazonianSpriteSheet_24
-    21300050: AmazonianSpriteSheet_25
-    21300052: AmazonianSpriteSheet_26
-    21300054: AmazonianSpriteSheet_27
-    21300056: AmazonianSpriteSheet_28
-    21300058: AmazonianSpriteSheet_29
-    21300060: AmazonianSpriteSheet_30
-    21300062: AmazonianSpriteSheet_31
-    21300064: AmazonianSpriteSheet_32
-    21300066: AmazonianSpriteSheet_33
+    21300000: GunnerSpriteSheet_0
+    21300002: GunnerSpriteSheet_1
+    21300004: GunnerSpriteSheet_2
+    21300006: GunnerSpriteSheet_3
+    21300008: GunnerSpriteSheet_4
+    21300010: GunnerSpriteSheet_5
+    21300012: GunnerSpriteSheet_6
+    21300014: GunnerSpriteSheet_7
+    21300016: GunnerSpriteSheet_8
+    21300018: GunnerSpriteSheet_9
+    21300020: GunnerSpriteSheet_10
+    21300022: GunnerSpriteSheet_11
+    21300024: GunnerSpriteSheet_12
+    21300026: GunnerSpriteSheet_13
+    21300028: GunnerSpriteSheet_14
+    21300030: GunnerSpriteSheet_15
+    21300032: GunnerSpriteSheet_16
+    21300034: GunnerSpriteSheet_17
+    21300036: GunnerSpriteSheet_18
+    21300038: GunnerSpriteSheet_19
+    21300040: GunnerSpriteSheet_20
+    21300042: GunnerSpriteSheet_21
+    21300044: GunnerSpriteSheet_22
+    21300046: GunnerSpriteSheet_23
+    21300048: GunnerSpriteSheet_24
+    21300050: GunnerSpriteSheet_25
+    21300052: GunnerSpriteSheet_26
+    21300054: GunnerSpriteSheet_27
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -109,301 +103,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 576
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 576
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 576
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 576
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 512
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_6
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 512
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_7
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 512
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 448
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_9
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 448
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_10
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 448
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_11
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 448
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_13
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_14
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_15
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 384
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_17
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_18
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_19
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 320
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_20
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: AmazonianSpriteSheet_21
+      name: GunnerSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -417,7 +117,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_22
+      name: GunnerSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 64
@@ -431,7 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_23
+      name: GunnerSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 128
@@ -445,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_24
+      name: GunnerSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 192
@@ -459,7 +159,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_25
+      name: GunnerSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -473,7 +229,105 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_26
+      name: GunnerSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_16
       rect:
         serializedVersion: 2
         x: 0
@@ -487,7 +341,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_27
+      name: GunnerSpriteSheet_17
       rect:
         serializedVersion: 2
         x: 64
@@ -501,7 +355,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_28
+      name: GunnerSpriteSheet_18
       rect:
         serializedVersion: 2
         x: 128
@@ -515,7 +369,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_29
+      name: GunnerSpriteSheet_19
       rect:
         serializedVersion: 2
         x: 192
@@ -529,7 +383,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_30
+      name: GunnerSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: GunnerSpriteSheet_24
       rect:
         serializedVersion: 2
         x: 0
@@ -543,7 +453,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_31
+      name: GunnerSpriteSheet_25
       rect:
         serializedVersion: 2
         x: 64
@@ -557,7 +467,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_32
+      name: GunnerSpriteSheet_26
       rect:
         serializedVersion: 2
         x: 128
@@ -571,7 +481,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: AmazonianSpriteSheet_33
+      name: GunnerSpriteSheet_27
       rect:
         serializedVersion: 2
         x: 192

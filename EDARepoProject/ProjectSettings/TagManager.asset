@@ -11,6 +11,7 @@ TagManager:
   - Blue Brute Bat
   - Red Gunner
   - Blue Gunner
+  - GameMasterTag
   layers:
   - Default
   - TransparentFX
