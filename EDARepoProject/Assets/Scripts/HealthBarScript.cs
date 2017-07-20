@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿//Michael Sorger code
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBarScript : MonoBehaviour {
 
+ //   public GameObject health_bar;
     private Transform barTransform;
     // Use this for initialization
     void Start ()

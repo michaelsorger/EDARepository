@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 114570047563950664}
   m_Layer: 0
   m_Name: Blue Gunner
-  m_TagString: Untagged
+  m_TagString: Blue Gunner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137942926874474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.79, y: -4.13, z: 0}
+  m_LocalPosition: {x: 6.81, y: 3.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4192693767303904}
@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f30dae0b439ddb48b8751ce8e0b4ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 20
 --- !u!114 &114147301126485942
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -293,7 +295,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 50395760176248916, guid: 25b52c7c3ba08154fa14322e8a7d05e9,
     type: 2}
   bulletSpawn: {fileID: 4192693767303904}
-  batCollider: {fileID: 0}
+  batCollider: {fileID: 61567143196136518, guid: c8f89be956e4b9146a415202a160e626,
+    type: 2}
 --- !u!114 &114614774207009612
 MonoBehaviour:
   m_ObjectHideFlags: 1
