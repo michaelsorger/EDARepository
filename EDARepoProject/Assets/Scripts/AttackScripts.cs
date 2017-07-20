@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//Michael Sorger code
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,7 +64,7 @@ public class AttackScripts : MonoBehaviour {
         //change shape collider
         batCollider.GetComponent<BoxCollider2D>().size = new Vector2(originalBatSize.x + .35f, originalBatSize.y - .3f);
         batCollider.GetComponent<BoxCollider2D>().offset = new Vector2(originalBatOffset.x - .35f, originalBatOffset.y - .15f);
-        Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
+       // Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
        //what it hitsnsfo
     }
 
@@ -75,7 +77,7 @@ public class AttackScripts : MonoBehaviour {
     {
         batCollider.GetComponent<BoxCollider2D>().size = new Vector2(originalBatSize.x, originalBatSize.y);
         batCollider.GetComponent<BoxCollider2D>().offset = new Vector2(originalBatOffset.x, originalBatOffset.y);
-        Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
+       // Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
         batCollider.enabled = true;
     }
 

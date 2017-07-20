@@ -1,0 +1,62 @@
+Initialize engine version: 5.6.1f1 (2860b30f0b54)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [aticfx32.dll 8.17.10.1395]
+    Renderer: AMD Radeon R5 M335
+    Vendor:   ATI
+    VRAM:     3072 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=1 INTZ=1 NULL=1 RESZ=1 SlowINTZ=1 ATOC=0 BC4=1 BC5=1
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.242 seconds
+Platform assembly: C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\mrmon\Desktop\EDAAlpha\EDARepoProject\MasterBuild_Data\Managed\System.dll (this message is harmless)
+WARNING: Shader Unsupported: 'Hidden/VR/BlitCopyFromTexArray' - Pass '' has no vertex shader
+WARNING: Shader Unsupported: 'Hidden/VR/BlitCopyFromTexArray' - Setting to default shader.
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 2.910817 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 19.699373 ms
+
+Unloading 40 unused Assets to reduce memory usage. Loaded Objects now: 263.
+Total: 0.788938 ms (FindLiveObjects: 0.037530 ms CreateObjectMapping: 0.042271 ms MarkObjects: 0.295901 ms  DeleteObjects: 0.412444 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.924445 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 329.
+Total: 0.536494 ms (FindLiveObjects: 0.043456 ms CreateObjectMapping: 0.042666 ms MarkObjects: 0.421136 ms  DeleteObjects: 0.027654 ms)
+
+Joystick connected ("Controller (Xbox One For Windows)").
+ 
+(Filename:  Line: 1351)
+
+Joystick connected ("Controller (Xbox One For Windows)").
+ 
+(Filename:  Line: 1351)
+
+Joystick disconnected ("Controller (Xbox One For Windows)").
+ 
+(Filename:  Line: 1258)
+
+Joystick reconnected ("Controller (Xbox One For Windows)").
+ 
+(Filename:  Line: 1323)
+
+Joystick connected ("Controller (Xbox One For Windows)").
+ 
+(Filename:  Line: 1351)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: e0e0 -> priority: 1 
+  Thread -> id: d454 -> priority: 1 
