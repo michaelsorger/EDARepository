@@ -1338,6 +1338,7 @@ GameObject:
   - component: {fileID: 821917586}
   - component: {fileID: 821917588}
   - component: {fileID: 821917587}
+  - component: {fileID: 821917589}
   m_Layer: 5
   m_Name: ControlsPanel
   m_TagString: Untagged
@@ -1397,6 +1398,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 821917585}
+--- !u!114 &821917589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 821917585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aeff36f8b751e4799543f54dfb1c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 676322625}
+  selectedObject: {fileID: 1906170210}
 --- !u!1 &833820369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1859,7 @@ GameObject:
   - component: {fileID: 1050246144}
   - component: {fileID: 1050246143}
   - component: {fileID: 1050246142}
+  - component: {fileID: 1050246145}
   m_Layer: 5
   m_Name: AudioPanel
   m_TagString: Untagged
@@ -1929,6 +1944,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050246140}
+--- !u!114 &1050246145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1050246140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aeff36f8b751e4799543f54dfb1c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 676322625}
+  selectedObject: {fileID: 833820369}
 --- !u!1 &1140941906
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2621,7 @@ GameObject:
   - component: {fileID: 1868004971}
   - component: {fileID: 1868004973}
   - component: {fileID: 1868004972}
+  - component: {fileID: 1868004974}
   m_Layer: 5
   m_Name: DevTeamPanel
   m_TagString: Untagged
@@ -2652,6 +2681,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1868004970}
+--- !u!114 &1868004974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868004970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aeff36f8b751e4799543f54dfb1c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 676322625}
+  selectedObject: {fileID: 1140941906}
 --- !u!1 &1906170210
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,6 +3104,7 @@ GameObject:
   - component: {fileID: 2131330481}
   - component: {fileID: 2131330483}
   - component: {fileID: 2131330482}
+  - component: {fileID: 2131330484}
   m_Layer: 5
   m_Name: CharactorBiosPanel
   m_TagString: Untagged
@@ -3121,6 +3164,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2131330480}
+--- !u!114 &2131330484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2131330480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94aeff36f8b751e4799543f54dfb1c43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventSystem: {fileID: 676322625}
+  selectedObject: {fileID: 1945213447}
 --- !u!1 &2146328667
 GameObject:
   m_ObjectHideFlags: 0
