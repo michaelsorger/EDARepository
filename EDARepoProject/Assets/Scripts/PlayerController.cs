@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
     private Transform initialTransform;
     private Vector3 initialPlayerSpawn;
+    private CharacterController2D pController;
+
 	void Awake ()
     {
         _healthBarScript = gameObject.GetComponent<HealthBarScript>();
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
        // HealthBar = GetComponentInChildren<Canvas>().gameObject;
         initialTransform = gameObject.GetComponent<Transform>();
         initialPlayerSpawn = new Vector3(initialTransform.position.x, initialTransform.position.y, initialTransform.position.z);
+        pController = gameObject.GetComponent<CharacterController2D>();
     }
 	
 	// Update is called once per frame
@@ -41,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+       // string bulletTriggerChild = GameObject.Find("FullGunnerBullet").transform.Find("GunnerBulletTrigger").tag;
+        string bTriggerChild = gameObject.GetComponent<AttackScripts>().bulletTrigger.tag;
         //runs into spike
         if(col.tag == "Damaging")
         {
@@ -53,6 +58,19 @@ public class PlayerController : MonoBehaviour
         else if(col.tag == "Blue Brute Bat")
         {
             playerDamage(5);
+        }
+        else if (col.tag == bTriggerChild)
+        {
+            playerDamage(10);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D bullet)
+    {
+        Debug.Log("bullet collided with me!");
+        if(bullet.transform.tag == "GunnerBullet")
+        {
+            Destroy(bullet.collider.gameObject);
         }
     }
 

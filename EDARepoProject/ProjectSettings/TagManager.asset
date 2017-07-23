@@ -12,6 +12,9 @@ TagManager:
   - Red Gunner
   - Blue Gunner
   - GameMasterTag
+  - BulletTrigger
+  - BulletPlatform
+  - GunnerBullet
   layers:
   - Default
   - TransparentFX

@@ -254,6 +254,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f30dae0b439ddb48b8751ce8e0b4ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 15
 --- !u!114 &114284893194107034
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,7 +315,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87241a5a27b952e40813b73982363f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 50981957495936900, guid: aee43365f87b09642a9c80d83dd3e8d1,
+  bulletPrefab: {fileID: 1395099801246022, guid: fde8a94cf3907ac4d8937d8acf7bfc67,
+    type: 2}
+  bulletTrigger: {fileID: 50395760176248916, guid: 25b52c7c3ba08154fa14322e8a7d05e9,
+    type: 2}
+  bulletPlatform: {fileID: 50495778198093134, guid: 96f76cbb1938fd14cb6065d2c9cc3403,
     type: 2}
   bulletSpawn: {fileID: 4022070868475358}
   batCollider: {fileID: 0}

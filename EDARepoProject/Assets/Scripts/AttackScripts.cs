@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class AttackScripts : MonoBehaviour {
 
-	public Rigidbody2D bulletPrefab;
+	public GameObject bulletPrefab;
+    public Rigidbody2D bulletTrigger;
+    public Rigidbody2D bulletPlatform;
 	public Transform bulletSpawn;
     public BoxCollider2D batCollider;
 
@@ -14,7 +16,9 @@ public class AttackScripts : MonoBehaviour {
     private AnimInputController _inputController;
     private Vector2 originalBatSize;
     private Vector2 originalBatOffset;
-    private Rigidbody2D bPrefab;
+    private GameObject bPrefab;
+    private Rigidbody2D triggerPrefab;
+    private Rigidbody2D platformPrefab;
 
     // Use this for initialization
     void Start ()
@@ -37,17 +41,31 @@ public class AttackScripts : MonoBehaviour {
         //if the player is facing to the right.
         if (_inputController.getFacing() == "Right")
 		{
-			bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
-			bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500, ForceMode2D.Force);
+			bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+            triggerPrefab = Instantiate(bulletTrigger, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+            triggerPrefab.transform.parent = bPrefab.transform;
+
+            platformPrefab = Instantiate(bulletPlatform, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
+            platformPrefab.transform.parent = bPrefab.transform;
+
+            triggerPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500, ForceMode2D.Force);
+            platformPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500, ForceMode2D.Force);
 
             //cooldown = Time.time + attackSpeed;
         }
 		else
 		{
-			//otherwise we are facing left
-			bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity) as Rigidbody2D;
-			bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500, ForceMode2D.Force);
-            //cooldown = Time.time + attackSpeed;
+            //otherwise we are facing left
+            bPrefab = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity); //instantiate parent does not have a sprite component attatched
+
+            triggerPrefab = Instantiate(bulletTrigger, bulletSpawn.position, Quaternion.identity) as Rigidbody2D; //instantiate child 1? 
+            triggerPrefab.transform.parent = bPrefab.transform;
+
+            platformPrefab = Instantiate(bulletPlatform, bulletSpawn.position, Quaternion.identity) as Rigidbody2D; //instanitate child 2
+            platformPrefab.transform.parent = bPrefab.transform;
+
+            triggerPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500, ForceMode2D.Force); //add force to child trigger component
+            platformPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 500, ForceMode2D.Force); //add force to other child platform component 
         }
         
     }

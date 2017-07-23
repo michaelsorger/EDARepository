@@ -105,7 +105,7 @@ public class AnimInputController : MonoBehaviour
 				}
 				else if (move > 0.5f) //right
 				{
-						setFacing("Right");
+				    setFacing("Right");
 				}
 				else
 				{
