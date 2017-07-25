@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapSelect.unity
     guid: 29996b0e2a001ed428ecfc23a916ce14
+  - enabled: 1
+    path: Assets/Scenes/TeamSelect.unity
+    guid: 6715c3075f764fb41adffc967162f381

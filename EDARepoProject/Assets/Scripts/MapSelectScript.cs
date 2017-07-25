@@ -7,7 +7,9 @@ public class MapSelectScript : MonoBehaviour
 
     public GameObject _mapSelectList;
     public List<GameObject> mapList;
-    public int index = 0;
+    public int mapIndex = 0;
+
+    private string selectedMap;
     // Use this for initialization
     void Start()
     {
@@ -21,41 +23,42 @@ public class MapSelectScript : MonoBehaviour
 
             mapList.Add(_map);
             _map.SetActive(false); //set the current gameObject as false
-            mapList[index].SetActive(true); //set active the first gameObject in the list
+            mapList[mapIndex].SetActive(true); //set active the first gameObject in the list
         }
     }
 
 
     public void MapNext()
     {
-        mapList[index].SetActive(false);
-        if(index == mapList.Count - 1)
+        mapList[mapIndex].SetActive(false);
+        if(mapIndex == mapList.Count - 1)
         {
-            index = 0;
+            mapIndex = 0;
         }
         else
         {
-            index++;
+            mapIndex++;
         }
-        mapList[index].SetActive(true);
+        mapList[mapIndex].SetActive(true);
     }
 
     public void MapPrevious()
     {
-        mapList[index].SetActive(false);
-        if (index == 0)
+        mapList[mapIndex].SetActive(false);
+        if (mapIndex == 0)
         {
-            index = mapList.Count - 1;
+            mapIndex = mapList.Count - 1;
         }
         else
         {
-            index--;
+            mapIndex--;
         }
-        mapList[index].SetActive(true);
+        mapList[mapIndex].SetActive(true);
     }
 
     public void SelectMap()
     {
-
+        PlayerPrefs.SetInt(selectedMap, mapIndex);
+        Debug.Log(PlayerPrefs.GetInt(selectedMap));
     }
 }
