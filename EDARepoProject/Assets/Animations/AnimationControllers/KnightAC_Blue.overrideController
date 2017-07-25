@@ -7,4 +7,12 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: KnightAC_Blue
   m_Controller: {fileID: 9100000, guid: 68d3b4e1fbec22d4c962d2a3f0aef991, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95820818e8bf6fb4383147c6178b7b9f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8b0468d79345b544483530b9695736e2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d31b406e6e801634d8f31f468c0f95ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e3d60387794e32644b79c5bcb285b4c7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 774b35ed787958240813e9f0499c0012, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 09f19b742c077254ebb1990792f4af5c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 36f9bcc8cc1c5cd47bb9edd61db718c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 63e61e7e6627c4a479518b0cce2a8006, type: 2}
