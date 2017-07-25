@@ -7,4 +7,12 @@ AnimatorOverrideController:
   m_PrefabInternal: {fileID: 0}
   m_Name: KnightAC_Red
   m_Controller: {fileID: 9100000, guid: 68d3b4e1fbec22d4c962d2a3f0aef991, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95820818e8bf6fb4383147c6178b7b9f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cf6af011e4e93264a9ff31d442178def, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d31b406e6e801634d8f31f468c0f95ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7d0581888b249ba40ad839a12aacad18, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 36f9bcc8cc1c5cd47bb9edd61db718c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 51ec8dfbfc2e9334da27a142add8be99, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 774b35ed787958240813e9f0499c0012, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e935f7323a9e77e40976c222d1611db1, type: 2}
