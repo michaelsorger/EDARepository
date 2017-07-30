@@ -9,6 +9,4 @@ public class BackButtonScript : MonoBehaviour
 	{
         UnityEngine.SceneManagement.SceneManager.LoadScene(newGameLevel);
     }
-
-
 }

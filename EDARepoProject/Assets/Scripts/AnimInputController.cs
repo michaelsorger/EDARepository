@@ -37,6 +37,8 @@ public class AnimInputController : MonoBehaviour
 
 	void Start()
 	{
+        //getAxisNamesFromPlayerPrefs()
+
 		_anim = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
 	}

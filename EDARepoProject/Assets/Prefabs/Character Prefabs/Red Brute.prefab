@@ -450,6 +450,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f30dae0b439ddb48b8751ce8e0b4ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character: 
+  jerseyNum: 
+  controllerNum: 
+  teamColor: 
   currentHealth: 0
   maxHealth: 30
 --- !u!114 &114951064619077606
