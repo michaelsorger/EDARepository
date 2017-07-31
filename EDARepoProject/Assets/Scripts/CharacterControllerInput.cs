@@ -101,6 +101,16 @@ public class CharacterControllerInput : MonoBehaviour
                 {
                     LockInBox(ref red1Fin, red1CIPrefab);
                     red1CharName = red1Sprites[red1Index].name;
+
+                    //require each character on their respected team to be unique
+                    red1Sprites.RemoveAt(red1Index);
+                    red2Sprites.RemoveAt(red1Index);
+
+                    NextChar(ref red2Index,red2Sprites,red2CIPrefab);
+                    for (int i = 0; i < red1Sprites.Count; i++)
+                    {
+                        Debug.Log("available red 1 sprites left = " + red1Sprites[i]);
+                    }
                 }
             }
         }
@@ -122,6 +132,17 @@ public class CharacterControllerInput : MonoBehaviour
                 {
                     LockInBox(ref red2Fin, red2CIPrefab);
                     red2CharName = red2Sprites[red2Index].name;
+
+                    //require each character on their respected team to be unique
+                    red2Sprites.RemoveAt(red2Index);
+                    red1Sprites.RemoveAt(red2Index);
+
+                    NextChar(ref red1Index, red1Sprites, red1CIPrefab);
+
+                    for (int i = 0; i < red2Sprites.Count; i++)
+                    {
+                        Debug.Log("available red 2 sprites left = " + red2Sprites[i]);
+                    }
                 }
             }
         }
@@ -144,6 +165,17 @@ public class CharacterControllerInput : MonoBehaviour
                 {
                     LockInBox(ref blue1Fin, blue1CIPrefab);
                     blue1CharName = blue1Sprites[blue1Index].name;
+
+                    //require each character on their respected team to be unique
+                    blue1Sprites.RemoveAt(blue1Index);
+                    blue2Sprites.RemoveAt(blue1Index);
+
+                    NextChar(ref blue2Index, blue2Sprites, blue2CIPrefab);
+
+                    for (int i = 0; i < blue1Sprites.Count; i++)
+                    {
+                        Debug.Log("available blue 1 sprites left = " + blue1Sprites[i]);
+                    }
                 }
             }
         }
@@ -165,6 +197,17 @@ public class CharacterControllerInput : MonoBehaviour
                 {
                     LockInBox(ref blue2Fin, blue2CIPrefab);
                     blue2CharName = blue2Sprites[blue2Index].name;
+
+                    //require each character on their respected team to be unique
+                    blue2Sprites.RemoveAt(blue2Index);
+                    blue1Sprites.RemoveAt(blue2Index);
+
+                    NextChar(ref blue1Index, blue1Sprites, blue1CIPrefab);
+
+                    for (int i = 0; i < blue2Sprites.Count; i++)
+                    {
+                        Debug.Log("available blue 2sprites left = " + blue2Sprites[i]);
+                    }
                 }
             }
         }

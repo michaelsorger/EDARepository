@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class TeamControllerInput : MonoBehaviour
@@ -103,7 +104,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x1Fin == false)
         {
             bool x1IsGood = moveControllerByXAxis("lj1", x1, midPos1);
-            if (isSelected("a1", ref x1Fin, x1IsGood))
+            if (isSelected("a1", ref x1Fin, x1IsGood, x1))
             {
                 x1Fin = true;
             }
@@ -111,7 +112,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x2Fin == false)
         {
             bool x2IsGood = moveControllerByXAxis("lj2", x2, midPos2);
-            if (isSelected("a2", ref x2Fin, x2IsGood))
+            if (isSelected("a2", ref x2Fin, x2IsGood, x2))
             {
                 x2Fin = true;
             }
@@ -119,7 +120,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x3Fin == false)
         {
             bool x3IsGood = moveControllerByXAxis("lj3", x3, midPos3);
-            if (isSelected("a3", ref x3Fin, x3IsGood))
+            if (isSelected("a3", ref x3Fin, x3IsGood, x3))
             {
                 x3Fin = true;
             }
@@ -127,7 +128,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x4Fin == false)
         {
             bool x4IsGood = moveControllerByXAxis("lj4", x4, midPos4);
-            if (isSelected("a4", ref x4Fin, x4IsGood))
+            if (isSelected("a4", ref x4Fin, x4IsGood, x4))
             {
                 x4Fin = true;
             }
@@ -286,10 +287,14 @@ public class TeamControllerInput : MonoBehaviour
         return false;
     }
 
-    private bool isSelected(string buttonAxis, ref bool xBoxFin, bool inGoodPosition)
+    private bool isSelected(string buttonAxis, ref bool xBoxFin, bool inGoodPosition, GameObject xController)
     {
         if(Input.GetAxis(buttonAxis) > 0 && inGoodPosition == true)
         {
+            Color c = xController.GetComponent<Image>().color;
+            c.a = .5f; //oh so you thought this would be 1-255?? you could not be more wrong lmfao
+            Debug.Log("Changed color ");
+            xController.GetComponent<Image>().color = c;
             xBoxFin = true;
             return xBoxFin;
         }
