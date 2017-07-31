@@ -113,7 +113,7 @@ public class AnimInputController : MonoBehaviour
 				}
 
 				//move my player
-				velocity.x *= 0.90f; //friction calc
+				//velocity.x *= 0.90f; //friction calc
 				if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
 				{
 					velocity.y = 0;
@@ -152,7 +152,7 @@ public class AnimInputController : MonoBehaviour
                 }
 
                 //move my player
-                velocity.x *= 0.90f; //friction calc
+                //velocity.x *= 0.90f; //friction calc
                 if (_controller.collisionState.hasCollision() && _controller.collisionState.above)
                 {
                     velocity.y = 0;
@@ -166,6 +166,7 @@ public class AnimInputController : MonoBehaviour
 				break;
 
 			case "Jump":
+                
                 //if input is Jump
                 gameObject.GetComponent<AttackScripts>().batInactive();
                 if (_controller.isGrounded)
@@ -175,6 +176,7 @@ public class AnimInputController : MonoBehaviour
                 if (jumpAxisf > 0 && _controller.isGrounded)
                 {
                     //jump
+                    gameObject.GetComponent<AudioSource>().Play();
                     velocity.y = jumpHeight; //Mathf.Sqrt(2f * jumpHeight * -gravity);
                     _anim.SetBool("isJumping", true);
                 }
