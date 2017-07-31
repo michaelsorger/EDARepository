@@ -20,10 +20,12 @@ public class AttackScripts : MonoBehaviour {
     private Rigidbody2D triggerPrefab;
     private Rigidbody2D platformPrefab;
 
+    
+
     // Use this for initialization
     void Start ()
 	{
-		_inputController = GetComponent<AnimInputController>();
+        _inputController = GetComponent<AnimInputController>();
         originalBatSize = batCollider.GetComponent<BoxCollider2D>().size;
         originalBatOffset = batCollider.GetComponent<BoxCollider2D>().offset;
         batCollider.enabled = false;
@@ -82,8 +84,9 @@ public class AttackScripts : MonoBehaviour {
         //change shape collider
         batCollider.GetComponent<BoxCollider2D>().size = new Vector2(originalBatSize.x + .35f, originalBatSize.y - .3f);
         batCollider.GetComponent<BoxCollider2D>().offset = new Vector2(originalBatOffset.x - .35f, originalBatOffset.y - .15f);
-       // Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
-       //what it hitsnsfo
+        // Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
+        //what it hitsnsfo
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void batInactive()
@@ -97,6 +100,7 @@ public class AttackScripts : MonoBehaviour {
         batCollider.GetComponent<BoxCollider2D>().offset = new Vector2(originalBatOffset.x, originalBatOffset.y);
        // Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
         batCollider.enabled = true;
+        
     }
 
     public void fireMachineGun()
