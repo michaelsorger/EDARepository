@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameMaster : MonoBehaviour
 {
@@ -31,6 +32,15 @@ public class GameMaster : MonoBehaviour
     private Vector3 spawn4;
 
     public static GameMaster gm;
+    public EventSystem gmEventSystem;
+    private GameObject currentButton;
+    private AxisEventData currentAxis;
+
+    //timer
+    public float timeBetweenInputs = 0.15f; //in seconds
+    public float deadZone = 0.9f;
+    private float timer = 0;
+
     public GameObject winScreenUI;
     public Image redWin, blueWin;
 
@@ -52,6 +62,7 @@ public class GameMaster : MonoBehaviour
 
     private void Start()
     {
+        gmEventSystem.enabled = false;
         Time.timeScale = 1;
         winScreenUI.SetActive(false);
         redWin.enabled = false;
@@ -85,6 +96,44 @@ public class GameMaster : MonoBehaviour
         gm.StartCoroutine(gm.respawnPlayer(character4, spawn4));
 
         spawnDelay = 2;
+    }
+
+    private void Update()
+    {
+        if(gmEventSystem.enabled == true)
+        {
+            if (timer <= 0)
+            {
+                currentAxis = new AxisEventData(EventSystem.current);
+                currentButton = EventSystem.current.currentSelectedGameObject;
+
+                if (Input.GetAxis("VerticalDpad") > deadZone) // move up
+                {
+                    //Debug.Log("vertical val is = " + Input.GetAxis("VerticalDpad"));
+                    currentAxis.moveDir = MoveDirection.Up;
+                    ExecuteEvents.Execute(currentButton, currentAxis, ExecuteEvents.moveHandler);
+                }
+                else if (Input.GetAxis("VerticalDpad") < -deadZone) // move down
+                {
+                    currentAxis.moveDir = MoveDirection.Down;
+                    ExecuteEvents.Execute(currentButton, currentAxis, ExecuteEvents.moveHandler);
+                }
+                else if (Input.GetAxis("HorizontalDpad") > deadZone) // move right
+                {
+                    currentAxis.moveDir = MoveDirection.Right;
+                    ExecuteEvents.Execute(currentButton, currentAxis, ExecuteEvents.moveHandler);
+                }
+                else if (Input.GetAxis("HorizontalDpad") < -deadZone) // move left
+                {
+                    currentAxis.moveDir = MoveDirection.Left;
+                    ExecuteEvents.Execute(currentButton, currentAxis, ExecuteEvents.moveHandler);
+                }
+                timer = timeBetweenInputs;
+            }
+
+            //timer counting down
+            timer -= Time.fixedDeltaTime;
+        }
     }
 
     public static void killPlayer(GameObject player, string name, Vector3 spawnPoint)
@@ -206,12 +255,14 @@ public class GameMaster : MonoBehaviour
         {
             winScreenUI.SetActive(true);
             redWin.enabled = true;
+            gmEventSystem.enabled = true;
         }
         else
         {
             //blue won
             winScreenUI.SetActive(true);
             blueWin.enabled = true;
+            gmEventSystem.enabled = true;
         }
         Time.timeScale = 0;
     }
