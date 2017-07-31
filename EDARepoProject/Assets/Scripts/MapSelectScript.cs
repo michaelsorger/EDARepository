@@ -9,7 +9,6 @@ public class MapSelectScript : MonoBehaviour
     public List<GameObject> mapList;
     public int mapIndex = 0;
 
-    private string selectedMap;
     // Use this for initialization
     void Start()
     {
@@ -58,7 +57,7 @@ public class MapSelectScript : MonoBehaviour
 
     public void SelectMap()
     {
-        PlayerPrefs.SetInt(selectedMap, mapIndex);
-        Debug.Log(PlayerPrefs.GetInt(selectedMap));
+        PlayerPrefs.SetInt("Selected Map", mapIndex);
+        Debug.Log(PlayerPrefs.GetInt("Selected Map"));
     }
 }

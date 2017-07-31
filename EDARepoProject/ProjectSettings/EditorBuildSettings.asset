@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/EDAGame.unity
     guid: 17b531658130dfe4983a0911540b3998
   - enabled: 1
-    path: Assets/Scenes/MapSelect.unity
-    guid: 29996b0e2a001ed428ecfc23a916ce14
-  - enabled: 1
     path: Assets/Scenes/TeamSelect.unity
     guid: 6715c3075f764fb41adffc967162f381
   - enabled: 1
-    path: Assets/Scenes/Character Select Screen.unity
-    guid: 78b00813bef775d46aaa221a4548f6ec
+    path: Assets/Scenes/CharacterSelect.unity
+    guid: e895a52c47096d346bf54fc2cf054e82
+  - enabled: 1
+    path: Assets/Scenes/MapSelect.unity
+    guid: 29996b0e2a001ed428ecfc23a916ce14
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: da75fb1735a4e1c40baa51092973c426

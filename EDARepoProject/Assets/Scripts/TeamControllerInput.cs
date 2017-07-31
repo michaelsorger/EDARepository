@@ -8,6 +8,7 @@ public class TeamControllerInput : MonoBehaviour
 
     private GameObject currentButton;
     private AxisEventData currentAxis;
+    public EventSystem thisEventSystem;
 
     //controllers to move
     public GameObject x1;
@@ -50,11 +51,15 @@ public class TeamControllerInput : MonoBehaviour
 
     void Start()
     {
+        thisEventSystem.enabled = false;
+
         //assign original mid positions for each of the xbox controllers
         midPos1 = new Vector3(x1.transform.position.x, x1.transform.position.y, x1.transform.position.z);
         midPos2 = new Vector3(x2.transform.position.x, x2.transform.position.y, x2.transform.position.z);
         midPos3 = new Vector3(x3.transform.position.x, x3.transform.position.y, x3.transform.position.z);
         midPos4 = new Vector3(x4.transform.position.x, x4.transform.position.y, x4.transform.position.z);
+
+        PlayerPrefs.DeleteAll();
 
         //defaults at start of team select screen
         //The specified names of the character do not matter as their sprites do not show up
@@ -98,7 +103,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x1Fin == false)
         {
             bool x1IsGood = moveControllerByXAxis("lj1", x1, midPos1);
-            if (isSelected("a1", x1Fin, x1IsGood))
+            if (isSelected("a1", ref x1Fin, x1IsGood))
             {
                 x1Fin = true;
             }
@@ -106,7 +111,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x2Fin == false)
         {
             bool x2IsGood = moveControllerByXAxis("lj2", x2, midPos2);
-            if (isSelected("a2", x2Fin, x2IsGood))
+            if (isSelected("a2", ref x2Fin, x2IsGood))
             {
                 x2Fin = true;
             }
@@ -114,7 +119,7 @@ public class TeamControllerInput : MonoBehaviour
         if (x3Fin == false)
         {
             bool x3IsGood = moveControllerByXAxis("lj3", x3, midPos3);
-            if (isSelected("a3", x3Fin, x3IsGood))
+            if (isSelected("a3", ref x3Fin, x3IsGood))
             {
                 x3Fin = true;
             }
@@ -122,19 +127,21 @@ public class TeamControllerInput : MonoBehaviour
         if (x4Fin == false)
         {
             bool x4IsGood = moveControllerByXAxis("lj4", x4, midPos4);
-            if (isSelected("a4", x4Fin, x4IsGood))
+            if (isSelected("a4", ref x4Fin, x4IsGood))
             {
                 x4Fin = true;
             }
         }
 
-        if (x1Fin && x2Fin && x3Fin && x4Fin)
+        //if (x1Fin && x2Fin && x3Fin && x4Fin)
+        if (x1Fin)
         {
+            thisEventSystem.enabled = true;
             if (timer <= 0)
             {
                 currentAxis = new AxisEventData(EventSystem.current);
                 currentButton = EventSystem.current.currentSelectedGameObject;
-
+ 
                 if (Input.GetAxis("VerticalDpad") > deadZone) // move up
                 {
                     //Debug.Log("vertical val is = " + Input.GetAxis("VerticalDpad"));
@@ -197,14 +204,14 @@ public class TeamControllerInput : MonoBehaviour
             }
 
             //controller is on blue team, move back to mid
-            else if(xController.transform.position.x > midPos.x && xController.transform.position.y == blueTop.transform.position.y) //check is blue top is taken
+            else if(xController.transform.position.x > midPos.x && Vector3.Distance(xController.transform.position, blueTop.transform.position) < .1f) //check is blue top is taken
             {
                 xController.transform.position = new Vector3(midPos.x, midPos.y, midPos.z);
                 bTopIsTaken = false;
                 isMoved = false;
                 return isMoved;
             }
-            else if (xController.transform.position.x > midPos.x && xController.transform.position.y == blueBottom.transform.position.y) //blue bot check
+            else if (xController.transform.position.x > midPos.x && Vector3.Distance(xController.transform.position, blueBottom.transform.position) < .1f) //blue bot check
             {
                 xController.transform.position = new Vector3(midPos.x, midPos.y, midPos.z);
                 bBotIsTaken = false;
@@ -215,7 +222,7 @@ public class TeamControllerInput : MonoBehaviour
             //already on red, can't move left
             else
             {
-                Debug.Log("Can't move left any farther");
+               // Debug.Log("Can't move left any farther");
                 isMoved = true;
                 return isMoved;
             }
@@ -250,14 +257,14 @@ public class TeamControllerInput : MonoBehaviour
             }
 
             //controller is on red team, move back to mid
-            else if (xController.transform.position.x < midPos.x && xController.transform.position.y == redTop.transform.position.y) //check for top
+            else if (xController.transform.position.x < midPos.x && Vector3.Distance(xController.transform.position, redTop.transform.position) < .1f) //check for top
             {
                 xController.transform.position = new Vector3(midPos.x, midPos.y, midPos.z);
                 rTopIsTaken = false;
                 isMoved = false;
                 return isMoved;
             }
-            else if (xController.transform.position.x < midPos.x && xController.transform.position.y == redBottom.transform.position.y) //check for bot
+            else if (xController.transform.position.x < midPos.x && Vector3.Distance(xController.transform.position, redBottom.transform.position) < .1f) //check for bot
             {
                 xController.transform.position = new Vector3(midPos.x, midPos.y, midPos.z);
                 rBotIsTaken = false;
@@ -266,15 +273,20 @@ public class TeamControllerInput : MonoBehaviour
             }
             else
             {
-                Debug.Log("Can't move right any farther");
+                //Debug.Log("Can't move right any farther");
                 isMoved = true;
                 return isMoved;
             }
         }
+        if (xController.transform.position != midPos)
+        {
+            isMoved = true;
+            return isMoved;
+        }
         return false;
     }
 
-    private bool isSelected(string buttonAxis, bool xBoxFin, bool inGoodPosition)
+    private bool isSelected(string buttonAxis, ref bool xBoxFin, bool inGoodPosition)
     {
         if(Input.GetAxis(buttonAxis) > 0 && inGoodPosition == true)
         {

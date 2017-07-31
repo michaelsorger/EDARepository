@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
         {
             playerControl = false;
             _healthBarScript.setHealthBar(0f, greenBar);
-            GameMaster.killPlayer(this.gameObject, gameObject.tag ,initialPlayerSpawn);
+            GameMaster.killPlayer(this.gameObject, gameObject.name ,initialPlayerSpawn);
         }
     }
 

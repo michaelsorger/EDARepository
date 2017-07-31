@@ -10,21 +10,23 @@ public class GameMaster : MonoBehaviour
     public int spawnDelay = 0;
     public List<string> playerList = new List<string>();
 
-    public GameObject level;
+    public GameObject futureLevel;
+    public GameObject pastLevel;
+    public GameObject presentLevel;
 
-    public GameObject character1; //
+    private string character1;
     public Transform loc1;
     private Vector3 spawn1;
 
-    public GameObject character2;
+    private string character2;
     public Transform loc2;
     private Vector3 spawn2;
 
-    public GameObject character3;
+    private string character3;
     public Transform loc3;
     private Vector3 spawn3;
 
-    public GameObject character4;
+    private string character4;
     public Transform loc4;
     private Vector3 spawn4;
 
@@ -60,25 +62,35 @@ public class GameMaster : MonoBehaviour
         {
             gm = GameObject.FindGameObjectWithTag("GameMasterTag").GetComponent<GameMaster>();
         }
-        GameObject chosenLevel = (GameObject)Instantiate(level);
+
+        character1 = PlayerPrefs.GetString("Character 1 Name");
+        Debug.Log(character1);
+        character2 = PlayerPrefs.GetString("Character 2 Name");
+        Debug.Log(character2);
+        character3 = PlayerPrefs.GetString("Character 3 Name");
+        Debug.Log(character3);
+        character4 = PlayerPrefs.GetString("Character 4 Name");
+        Debug.Log(character4);
+
+        instantiateLevel();
 
         spawn1 = new Vector3(loc1.position.x, loc1.position.y, loc1.position.z);
         spawn2 = new Vector3(loc2.position.x, loc2.position.y, loc2.position.z);
         spawn3 = new Vector3(loc3.position.x, loc3.position.y, loc3.position.z);
         spawn4 = new Vector3(loc4.position.x, loc4.position.y, loc4.position.z);
 
-        gm.StartCoroutine(gm.respawnPlayer(character1.tag, spawn1));
-        gm.StartCoroutine(gm.respawnPlayer(character2.tag, spawn2));
-        gm.StartCoroutine(gm.respawnPlayer(character3.tag, spawn3));
-        gm.StartCoroutine(gm.respawnPlayer(character4.tag, spawn4));
+        gm.StartCoroutine(gm.respawnPlayer(character1, spawn1));
+        gm.StartCoroutine(gm.respawnPlayer(character2, spawn2));
+        gm.StartCoroutine(gm.respawnPlayer(character3, spawn3));
+        gm.StartCoroutine(gm.respawnPlayer(character4, spawn4));
 
         spawnDelay = 2;
     }
 
-    public static void killPlayer(GameObject player, string tag, Vector3 spawnPoint)
+    public static void killPlayer(GameObject player, string name, Vector3 spawnPoint)
     {
         Vector3 newSpawnPoint = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
-        string playerToSpawn = gm.newPlayerName(tag);
+        string playerToSpawn = gm.newPlayerName(name);
         Debug.Log(playerToSpawn);
         if(playerToSpawn == "Red Brute" || playerToSpawn == "Red Gunner")
         {
@@ -104,7 +116,7 @@ public class GameMaster : MonoBehaviour
         {
             //Do nothing, should end this if block
         }
-        gm.playerList.Remove(player.tag);
+        gm.playerList.Remove(player.name);
         Destroy(player);
         gm.StartCoroutine(gm.respawnPlayer(playerToSpawn, newSpawnPoint));       
     }
@@ -123,7 +135,6 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
            // playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + "lt" + PlayerPrefs.GetString("Red1"));
             gm.playerList.Add(player);
-
         }
         else if (player == "Blue Brute")
         {
@@ -134,7 +145,6 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
-
         }
         else if (player == "Red Gunner")
         {
@@ -145,7 +155,6 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             gm.playerList.Add(player);
-
         }
         else if (player == "Blue Gunner")
         {
@@ -156,31 +165,30 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
-
         }
         else
         {
-            Debug.Log("Character does not exist or tag is not assigned correctly");
+            Debug.Log("Character does not exist or name is not assigned correctly");
         }
 
     }
 
-    public string newPlayerName(string tagName)
+    public string newPlayerName(string Name)
     {
-        string playerToSpawn = tagName;
-        if (tagName == "Red Brute")
+        string playerToSpawn = Name;
+        if (Name == "Red Brute")
         {
             return playerToSpawn;
         }
-        else if (tagName == "Blue Brute")
+        else if (Name == "Blue Brute")
         {
             return playerToSpawn;
         }
-        else if (tagName == "Red Gunner")
+        else if (Name == "Red Gunner")
         {
             return playerToSpawn;
         }
-        else if (tagName == "Blue Gunner")
+        else if (Name == "Blue Gunner")
         {
             return playerToSpawn;
         }
@@ -206,6 +214,26 @@ public class GameMaster : MonoBehaviour
             blueWin.enabled = true;
         }
         Time.timeScale = 0;
+    }
+
+    private void instantiateLevel()
+    {
+        //future 0
+        //past 1
+        //present 2
+
+        if(PlayerPrefs.GetInt("Selected Map") == 0)
+        {
+            Instantiate(futureLevel);
+        }
+        else if (PlayerPrefs.GetInt("Selected Map") == 1)
+        {
+            Instantiate(pastLevel);
+        }
+        else if (PlayerPrefs.GetInt("Selected Map") == 2)
+        {
+            Instantiate(presentLevel);
+        }
     }
 }
 
