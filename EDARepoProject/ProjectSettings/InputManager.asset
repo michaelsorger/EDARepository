@@ -6,7 +6,7 @@ InputManager:
   serializedVersion: 2
   m_Axes:
   - serializedVersion: 3
-    m_Name: Left Joystick Brute Red
+    m_Name: lj1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -20,137 +20,9 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 2
-  - serializedVersion: 3
-    m_Name: Right Trigger Brute Red
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0.019
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 2
-    joyNum: 2
-  - serializedVersion: 3
-    m_Name: A Brute Red
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 2 button 0
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 19
-    joyNum: 2
-  - serializedVersion: 3
-    m_Name: B Brute Red
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 2 button 1
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 19
-    joyNum: 2
-  - serializedVersion: 3
-    m_Name: Left Joystick Brute Blue
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0.019
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 0
-    joyNum: 3
-  - serializedVersion: 3
-    m_Name: Right Trigger Brute Blue
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0.019
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 2
-    joyNum: 3
-  - serializedVersion: 3
-    m_Name: A Brute Blue
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 3 button 0
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 19
-    joyNum: 3
-  - serializedVersion: 3
-    m_Name: B Brute Blue
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 3 button 1
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 1000
-    dead: 0.001
-    sensitivity: 1000
-    snap: 0
-    invert: 0
-    type: 0
-    axis: 21
-    joyNum: 3
-  - serializedVersion: 3
-    m_Name: Left Joystick Gunner Red
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 0
-    dead: 0.1
-    sensitivity: 1
-    snap: 0
-    invert: 0
-    type: 2
-    axis: 0
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Right Trigger Gunner Red
+    m_Name: rt1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -166,7 +38,7 @@ InputManager:
     axis: 2
     joyNum: 1
   - serializedVersion: 3
-    m_Name: A Gunner Red
+    m_Name: a1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -182,7 +54,7 @@ InputManager:
     axis: 19
     joyNum: 1
   - serializedVersion: 3
-    m_Name: B Gunner Red
+    m_Name: b1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -198,7 +70,135 @@ InputManager:
     axis: 19
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Left Joystick Gunner Blue
+    m_Name: lj2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.019
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: rt2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.019
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: a2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick 2 button 0
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 19
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: b2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick 2 button 1
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 21
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: lj3
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: rt3
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.019
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 2
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: a3
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick 3 button 0
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 19
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: b3
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick 3 button 1
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 19
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: lj4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -214,7 +214,7 @@ InputManager:
     axis: 0
     joyNum: 4
   - serializedVersion: 3
-    m_Name: Right Trigger Gunner Blue
+    m_Name: rt4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -230,7 +230,7 @@ InputManager:
     axis: 2
     joyNum: 4
   - serializedVersion: 3
-    m_Name: A Gunner Blue
+    m_Name: a4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -246,7 +246,7 @@ InputManager:
     axis: 19
     joyNum: 4
   - serializedVersion: 3
-    m_Name: B Gunner Blue
+    m_Name: b4
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -358,7 +358,7 @@ InputManager:
     axis: 6
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Horizontal
+    m_Name: HorizonalDpad
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -366,12 +366,44 @@ InputManager:
     altNegativeButton: 
     altPositiveButton: 
     gravity: 0
-    dead: 0.15
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: VerticalDpad
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1
+    dead: 0.1
     sensitivity: 1
     snap: 0
     invert: 0
     type: 0
-    axis: 26
+    axis: 1
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Horizontal
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 10
+    dead: 0.9
+    sensitivity: 4
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 6
     joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical

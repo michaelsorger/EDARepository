@@ -12,7 +12,7 @@ public class GameMaster : MonoBehaviour
 
     public GameObject level;
 
-    public GameObject character1;
+    public GameObject character1; //
     public Transform loc1;
     private Vector3 spawn1;
 
@@ -117,18 +117,32 @@ public class GameMaster : MonoBehaviour
         {
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.RedBrutePrefab);
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis"); //PlayerPrefs
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+           // playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + "lt" + PlayerPrefs.GetString("Red1"));
             gm.playerList.Add(player);
+
         }
         else if (player == "Blue Brute")
         {
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueBrutePrefab);
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
 
         }
         else if (player == "Red Gunner")
         {
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.RedGunnerPrefab);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             gm.playerList.Add(player);
 
@@ -137,6 +151,10 @@ public class GameMaster : MonoBehaviour
         {
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueGunnerPrefab);
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
 
         }

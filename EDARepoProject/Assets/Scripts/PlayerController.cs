@@ -11,7 +11,13 @@ public class PlayerController : MonoBehaviour
     //Internals
     //private float cooldown = 0f;
     private HealthBarScript _healthBarScript; //reference to the health bar script
-    //private AttackScripts _attackScripts;
+
+    //set by UI team select/character select
+    public string character;
+    public string jerseyNum;
+    public string controllerNum;
+    public string teamColor;
+
     public float currentHealth = 0f;
 	public float maxHealth = 15f;
     private bool playerControl = true;
@@ -23,7 +29,6 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
     private Transform initialTransform;
     private Vector3 initialPlayerSpawn;
-    private CharacterController2D pController;
 
 	void Awake ()
     {
@@ -33,7 +38,6 @@ public class PlayerController : MonoBehaviour
        // HealthBar = GetComponentInChildren<Canvas>().gameObject;
         initialTransform = gameObject.GetComponent<Transform>();
         initialPlayerSpawn = new Vector3(initialTransform.position.x, initialTransform.position.y, initialTransform.position.z);
-        pController = gameObject.GetComponent<CharacterController2D>();
     }
 	
 	// Update is called once per frame
