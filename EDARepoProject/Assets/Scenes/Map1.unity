@@ -279,14 +279,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 82136942494159402, guid: 7da8d471ee563584ba2f9e5a2e470753,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7da8d471ee563584ba2f9e5a2e470753, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &369279109 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1254341821617934, guid: 7da8d471ee563584ba2f9e5a2e470753,
-    type: 2}
-  m_PrefabInternal: {fileID: 369279108}
 --- !u!1001 &507237554
 Prefab:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ Prefab:
     - target: {fileID: 82448443212037482, guid: e3d532701df581f48bfb3fcbba104a35,
         type: 2}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3d532701df581f48bfb3fcbba104a35, type: 2}
@@ -390,16 +390,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fb09aaed3da9bd45815c98e8f17f907, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &550341883 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1137942926874474, guid: 6fb09aaed3da9bd45815c98e8f17f907,
-    type: 2}
-  m_PrefabInternal: {fileID: 550341882}
---- !u!1 &625764858 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1437151097519452, guid: e3d532701df581f48bfb3fcbba104a35,
-    type: 2}
-  m_PrefabInternal: {fileID: 507237554}
 --- !u!1001 &1374593849
 Prefab:
   m_ObjectHideFlags: 0
@@ -456,11 +446,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fb09aaed3da9bd45815c98e8f17f907, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1374593850 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1137942926874474, guid: 6fb09aaed3da9bd45815c98e8f17f907,
-    type: 2}
-  m_PrefabInternal: {fileID: 1374593849}
 --- !u!1 &1643386649
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,14 +475,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnDelay: 0
   playerList: []
-  level: {fileID: 625764858}
-  character1: {fileID: 217921972}
+  futureLevel: {fileID: 0}
+  pastLevel: {fileID: 0}
+  presentLevel: {fileID: 0}
   loc1: {fileID: 4838995707143498, guid: 6fa111a900520d147b1a276e4cc7f523, type: 2}
-  character2: {fileID: 1374593850}
   loc2: {fileID: 4027648071279508, guid: 67c013a6b5f4e3f42ad4aabd9d6e10a0, type: 2}
-  character3: {fileID: 369279109}
   loc3: {fileID: 4770804780726442, guid: 83304cb6711eb7c44bda56c307969691, type: 2}
-  character4: {fileID: 550341883}
   loc4: {fileID: 4214924525277774, guid: dbc9c050fd6617d4e93a9d6d4d0086b8, type: 2}
   winScreenUI: {fileID: 0}
   redWin: {fileID: 0}
