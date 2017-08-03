@@ -141,7 +141,9 @@ public class GameMaster : MonoBehaviour
         Vector3 newSpawnPoint = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
         string playerToSpawn = gm.newPlayerName(name);
         Debug.Log(playerToSpawn);
-        if(playerToSpawn == "Red Brute" || playerToSpawn == "Red Gunner")
+        if(playerToSpawn == "Red Brute" || playerToSpawn == "Red Brute(Clone)" || playerToSpawn == "Red Gunner" || playerToSpawn == "Red Gunner(Clone)" ||
+            playerToSpawn == "Red Knight" || playerToSpawn == "Red Knight(Clone)" || playerToSpawn == "Red Amazonian" || playerToSpawn == "Red Amazonian(Clone)" ||
+            playerToSpawn == "Red Blade Master" || playerToSpawn == "Red Blade Master(Clone)" || playerToSpawn == "Red Bounty Hunter" || playerToSpawn == "Red Bounty Hunter(Clone)")
         {
             redTeamLives--;
             if(redTeamLives <= 0)
@@ -151,7 +153,9 @@ public class GameMaster : MonoBehaviour
             }
             Debug.Log("red team has " + getRedTeamLives() + " lives left!");
         }
-        else if(playerToSpawn == "Blue Brute" || playerToSpawn == "Blue Gunner")
+        else if(playerToSpawn == "Blue Brute" || playerToSpawn == "Blue Brute(Clone)" || playerToSpawn == "Blue Gunner" || playerToSpawn == "Blue Gunner(Clone)" ||
+            playerToSpawn == "Blue Knight" || playerToSpawn == "Blue Knight(Clone)" || playerToSpawn == "Blue Amazonian" || playerToSpawn == "Blue Amazonian(Clone)" ||
+            playerToSpawn == "Blue Blade Master" || playerToSpawn == "Blue Blade Master(Clone)" || playerToSpawn == "Blue Bounty Hunter" || playerToSpawn == "Blue Bounty Hunter(Clone)")
         {
             blueTeamLives--;
             if (blueTeamLives <= 0)
@@ -174,8 +178,9 @@ public class GameMaster : MonoBehaviour
     {
         yield return new WaitForSeconds(spawnDelay);
         Debug.Log("TODO, SPAWN PARTICLES");
-        if (player == "Red Brute")
+        if (player == "Red Brute(Clone)" || player == "Red Brute")
         {
+            player = "Red Brute";
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.RedBrutePrefab);
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis"); //PlayerPrefs
@@ -185,8 +190,9 @@ public class GameMaster : MonoBehaviour
            // playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + "lt" + PlayerPrefs.GetString("Red1"));
             gm.playerList.Add(player);
         }
-        else if (player == "Blue Brute")
+        else if (player == "Blue Brute(Clone)" || player == "Blue Brute")
         {
+            player = "Blue Brute";
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueBrutePrefab);
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
@@ -195,8 +201,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
         }
-        else if (player == "Red Gunner")
+        else if (player == "Red Gunner(Clone)" || player == "Red Gunner")
         {
+            player = "Red Gunner";
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.RedGunnerPrefab);
             playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
             playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
@@ -205,8 +212,97 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             gm.playerList.Add(player);
         }
-        else if (player == "Blue Gunner")
+        else if (player == "Blue Gunner(Clone)" || player == "Blue Gunner")
         {
+            player = "Blue Gunner";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueGunnerPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Red Knight(Clone)" || player == "Red Knight")
+        {
+            player = "Red Knight";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.RedKnightPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Blue Knight(Clone)" || player == "Blue Knight")
+        {
+            player = "Blue Knight";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueKnightPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Red Amazonian(Clone)" || player == "Red Amazonian")
+        {
+            player = "Red Amazonian";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.RedAmazonianPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Blue Amazonian(Clone)" || player == "Blue Amazonian")
+        {
+            player = "Blue Amazonian";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueAmazonianPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Red Blade Master(Clone)" || player == "Red Blade Master")
+        {
+            player = "Red Blade Master";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueGunnerPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Blue Blade Master(Clone)" || player == "Blue Blade Master")
+        {
+            player = "Blue Blade Master";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueGunnerPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Red Bounty Hunter(Clone)" || player == "Red Bounty Hunter")
+        {
+            player = "Red Bounty Hunter";
+            GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueGunnerPrefab);
+            playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
+            playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
+            playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
+            playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
+            playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
+            gm.playerList.Add(player);
+        }
+        else if (player == "Blue Bounty Hunter(Clone)" || player == "Blue Bounty Hunter")
+        {
+            player = "Blue Bounty Hunter";
             GameObject playerToSpawn = Instantiate(PrefabManager.Instance.BlueGunnerPrefab);
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             playerToSpawn.GetComponent<AnimInputController>().Left_Joystick_Axis = PlayerPrefs.GetString(player + " left joystick axis");
@@ -218,6 +314,7 @@ public class GameMaster : MonoBehaviour
         else
         {
             Debug.Log("Character does not exist or name is not assigned correctly");
+            Debug.Log(player);
         }
 
     }
@@ -238,6 +335,38 @@ public class GameMaster : MonoBehaviour
             return playerToSpawn;
         }
         else if (Name == "Blue Gunner")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Red Knight")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Blue Knight")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Red Amazonian")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Blue Amazonian")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Red Blade Master")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Blue Blade Master")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Red Bounty Hunter")
+        {
+            return playerToSpawn;
+        }
+        else if (Name == "Blue Bounty Hunter")
         {
             return playerToSpawn;
         }
@@ -264,7 +393,7 @@ public class GameMaster : MonoBehaviour
             blueWin.enabled = true;
             gmEventSystem.enabled = true;
         }
-        Time.timeScale = 0;
+       // Time.timeScale = 0;
     }
 
     private void instantiateLevel()

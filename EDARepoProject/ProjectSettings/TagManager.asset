@@ -15,6 +15,13 @@ TagManager:
   - BulletTrigger
   - BulletPlatform
   - GunnerBullet
+  - HealthPickupItem
+  - Blue Knight
+  - Red Knight
+  - Red Amazonian
+  - Blue Amazonian
+  - Blue Knight Bat
+  - Red Knight Bat
   layers:
   - Default
   - TransparentFX

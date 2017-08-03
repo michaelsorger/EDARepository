@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 9
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 9
+    serializedVersion: 8
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_ShadowMaskMode: 2
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -147,6 +147,14 @@ MonoBehaviour:
   RedGunnerPrefab: {fileID: 1534087240828918, guid: 6f158a211817ac2408a86f5d85b48672,
     type: 2}
   BlueGunnerPrefab: {fileID: 1137942926874474, guid: 6fb09aaed3da9bd45815c98e8f17f907,
+    type: 2}
+  RedKnightPrefab: {fileID: 1406908965631510, guid: 8b694d02143ca4645962d94a3fe07d62,
+    type: 2}
+  BlueKnightPrefab: {fileID: 1853448241856482, guid: ba76076a27faa0648bf49db64813db8d,
+    type: 2}
+  RedAmazonianPrefab: {fileID: 1660486055593956, guid: fd4f56b947880e64c96b82e7fe79856e,
+    type: 2}
+  BlueAmazonianPrefab: {fileID: 1901949818402668, guid: 1b0932e2353f5d040a95125ca3c0b672,
     type: 2}
 --- !u!4 &163055675
 Transform:
@@ -230,6 +238,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114940993352075094, guid: cfea373bf5861fa468333276ffc9e13c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224650734615244898, guid: cfea373bf5861fa468333276ffc9e13c,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -334,9 +347,50 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114940993352075094, guid: cfea373bf5861fa468333276ffc9e13c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114940993352075094, guid: cfea373bf5861fa468333276ffc9e13c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114940993352075094, guid: cfea373bf5861fa468333276ffc9e13c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 979114591}
+    - target: {fileID: 114940993352075094, guid: cfea373bf5861fa468333276ffc9e13c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: LoadSceneByIndex
+      objectReference: {fileID: 0}
+    - target: {fileID: 114940993352075094, guid: cfea373bf5861fa468333276ffc9e13c,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cfea373bf5861fa468333276ffc9e13c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &979114590 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1684453393837938, guid: cfea373bf5861fa468333276ffc9e13c,
+    type: 2}
+  m_PrefabInternal: {fileID: 979114589}
+--- !u!114 &979114591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 979114590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82cff5d385abe8e4aaed7d35a966ce89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1636596609 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114155215490020472, guid: cfea373bf5861fa468333276ffc9e13c,

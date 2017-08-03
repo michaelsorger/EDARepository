@@ -63,9 +63,21 @@ public class PlayerController : MonoBehaviour
         {
             playerDamage(5);
         }
+        else if (col.tag == "Red Knight Bat")
+        {
+            playerDamage(10);
+        }
+        else if (col.tag == "Blue Knight Bat")
+        {
+            playerDamage(10);
+        }
         else if (col.tag == bTriggerChild)
         {
             playerDamage(10);
+        }
+        else if (col.tag == "HealthPickupItem")
+        {
+            playerDamage(-15);
         }
     }
 

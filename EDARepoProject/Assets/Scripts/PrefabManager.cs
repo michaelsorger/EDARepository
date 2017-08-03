@@ -14,6 +14,10 @@ public class PrefabManager : MonoBehaviour
     public GameObject BlueBrutePrefab;
     public GameObject RedGunnerPrefab;
     public GameObject BlueGunnerPrefab;
+    public GameObject RedKnightPrefab;
+    public GameObject BlueKnightPrefab;
+    public GameObject RedAmazonianPrefab;
+    public GameObject BlueAmazonianPrefab;
 
     //Singleton
     private static PrefabManager m_Instance = null;

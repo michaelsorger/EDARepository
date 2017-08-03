@@ -108,4 +108,9 @@ public class AttackScripts : MonoBehaviour {
         Shoot();
     }
 
+    public void fireBow()
+    {
+        Shoot();
+    }
+
 }

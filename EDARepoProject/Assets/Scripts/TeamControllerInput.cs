@@ -135,7 +135,7 @@ public class TeamControllerInput : MonoBehaviour
         }
 
         //if (x1Fin && x2Fin && x3Fin && x4Fin)
-        if (x1Fin)
+        if (x1Fin && x2Fin)
         {
             thisEventSystem.enabled = true;
             if (timer <= 0)

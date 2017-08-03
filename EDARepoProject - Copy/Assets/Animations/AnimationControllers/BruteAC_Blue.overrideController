@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: BruteAC_Blue
+  m_Controller: {fileID: 9100000, guid: 68d3b4e1fbec22d4c962d2a3f0aef991, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 95820818e8bf6fb4383147c6178b7b9f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 85863d164b1ba79419685b850f77eb37, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d31b406e6e801634d8f31f468c0f95ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9080d25618ca60845a438d6d5ae8570c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 36f9bcc8cc1c5cd47bb9edd61db718c2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 54da3c7a1310e3d48b74676408b73457, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 774b35ed787958240813e9f0499c0012, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8215f7d9cf2d16a49b42899c0b9f853e, type: 2}

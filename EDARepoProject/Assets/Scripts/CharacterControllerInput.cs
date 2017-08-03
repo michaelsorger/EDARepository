@@ -214,7 +214,7 @@ public class CharacterControllerInput : MonoBehaviour
 
         //IF ALL ARE LOCKED IN
         //red1Fin && red2Fin && blue1Fin && blue2Fin
-        if (red1Fin || blue1Fin)
+        if (red1Fin && blue1Fin)
         {
             thisEventSystem.enabled = true;
             if (timer <= 0)

@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 15
-  gravity: -35
+  gravity: -30
   maxSpeed: 3
   Left_Joystick_Axis: Left Joystick Gunner Blue
   Right_Trigger_Axis: Right Trigger Gunner Blue

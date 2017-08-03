@@ -100,7 +100,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 2
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: a2
     descriptiveName: 
