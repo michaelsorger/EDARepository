@@ -11,6 +11,11 @@ public class AttackScripts : MonoBehaviour {
     public Rigidbody2D bulletPlatform;
 	public Transform bulletSpawn;
     public BoxCollider2D batCollider;
+    public AudioSource audio1;
+    public AudioSource audio2;
+    public AudioSource audio3;
+    
+
 
     //   private float attackSpeed = 1f;
     private AnimInputController _inputController;
@@ -19,12 +24,18 @@ public class AttackScripts : MonoBehaviour {
     private GameObject bPrefab;
     private Rigidbody2D triggerPrefab;
     private Rigidbody2D platformPrefab;
+    
 
     
 
     // Use this for initialization
     void Start ()
 	{
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audio1 = audioSources[0];
+        audio2 = audioSources[1];
+        audio3 = audioSources[2];
+
         _inputController = GetComponent<AnimInputController>();
         originalBatSize = batCollider.GetComponent<BoxCollider2D>().size;
         originalBatOffset = batCollider.GetComponent<BoxCollider2D>().offset;
@@ -86,7 +97,8 @@ public class AttackScripts : MonoBehaviour {
         batCollider.GetComponent<BoxCollider2D>().offset = new Vector2(originalBatOffset.x - .35f, originalBatOffset.y - .15f);
         // Debug.Log("boxCollider x = " + batCollider.GetComponent<BoxCollider2D>().size.x + " BoxCollider y = " + batCollider.GetComponent<BoxCollider2D>().size.y);
         //what it hitsnsfo
-        gameObject.GetComponent<AudioSource>().Play();
+        audio2.Play();
+
     }
 
     public void batInactive()
@@ -105,6 +117,7 @@ public class AttackScripts : MonoBehaviour {
 
     public void fireMachineGun()
     {
+        audio3.Play();
         Shoot();
     }
 
