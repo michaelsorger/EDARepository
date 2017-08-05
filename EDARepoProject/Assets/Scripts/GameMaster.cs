@@ -36,6 +36,9 @@ public class GameMaster : MonoBehaviour
     private GameObject currentButton;
     private AxisEventData currentAxis;
 
+    public GameObject spawnRedPrefab;
+    public GameObject spawnBluePrefab;
+
     //timer
     public float timeBetweenInputs = 0.15f; //in seconds
     public float deadZone = 0.9f;
@@ -177,7 +180,7 @@ public class GameMaster : MonoBehaviour
     public IEnumerator respawnPlayer(string player, Vector3 spawnPoint)
     {
         yield return new WaitForSeconds(spawnDelay);
-        Debug.Log("TODO, SPAWN PARTICLES");
+        //Debug.Log("TODO, SPAWN PARTICLES");
         if (player == "Red Brute(Clone)" || player == "Red Brute")
         {
             player = "Red Brute";
@@ -187,8 +190,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().Right_Trigger_Axis = PlayerPrefs.GetString(player + " right trigger axis");
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
-           // playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + "lt" + PlayerPrefs.GetString("Red1"));
             gm.playerList.Add(player);
+            GameObject redPart = Instantiate(spawnRedPrefab, playerToSpawn.transform) as GameObject;
+            Destroy(redPart, 3f);
         }
         else if (player == "Blue Brute(Clone)" || player == "Blue Brute")
         {
@@ -200,6 +204,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject bluePart = Instantiate(spawnBluePrefab, playerToSpawn.transform) as GameObject;
+            Destroy(bluePart, 3f);
         }
         else if (player == "Red Gunner(Clone)" || player == "Red Gunner")
         {
@@ -211,6 +217,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             gm.playerList.Add(player);
+            GameObject redPart = Instantiate(spawnRedPrefab, playerToSpawn.transform) as GameObject;
+            Destroy(redPart, 3f);
         }
         else if (player == "Blue Gunner(Clone)" || player == "Blue Gunner")
         {
@@ -222,6 +230,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject bluePart = Instantiate(spawnBluePrefab, playerToSpawn.transform) as GameObject;
+            Destroy(bluePart, 3f);
         }
         else if (player == "Red Knight(Clone)" || player == "Red Knight")
         {
@@ -233,6 +243,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject redPart = Instantiate(spawnRedPrefab, playerToSpawn.transform) as GameObject;
+            Destroy(redPart, 3f);
         }
         else if (player == "Blue Knight(Clone)" || player == "Blue Knight")
         {
@@ -244,6 +256,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject bluePart = Instantiate(spawnBluePrefab, playerToSpawn.transform) as GameObject;
+            Destroy(bluePart, 3f);
         }
         else if (player == "Red Amazonian(Clone)" || player == "Red Amazonian")
         {
@@ -255,6 +269,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject redPart = Instantiate(spawnRedPrefab, playerToSpawn.transform) as GameObject;
+            Destroy(redPart, 3f);
         }
         else if (player == "Blue Amazonian(Clone)" || player == "Blue Amazonian")
         {
@@ -266,6 +282,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject bluePart = Instantiate(spawnBluePrefab, playerToSpawn.transform) as GameObject;
+            Destroy(bluePart, 3f);
         }
         else if (player == "Red Blade Master(Clone)" || player == "Red Blade Master")
         {
@@ -277,6 +295,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject redPart = Instantiate(spawnRedPrefab, playerToSpawn.transform) as GameObject;
+            Destroy(redPart, 3f);
         }
         else if (player == "Blue Blade Master(Clone)" || player == "Blue Blade Master")
         {
@@ -288,6 +308,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject bluePart = Instantiate(spawnBluePrefab, playerToSpawn.transform) as GameObject;
+            Destroy(bluePart, 3f);
         }
         else if (player == "Red Bounty Hunter(Clone)" || player == "Red Bounty Hunter")
         {
@@ -299,6 +321,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject redPart = Instantiate(spawnRedPrefab, playerToSpawn.transform) as GameObject;
+            Destroy(redPart, 3f);
         }
         else if (player == "Blue Bounty Hunter(Clone)" || player == "Blue Bounty Hunter")
         {
@@ -310,6 +334,8 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            GameObject bluePart = Instantiate(spawnBluePrefab, playerToSpawn.transform) as GameObject;
+            Destroy(bluePart, 3f);
         }
         else
         {

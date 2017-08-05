@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -452,6 +452,8 @@ MonoBehaviour:
   loc3: {fileID: 4770804780726442, guid: 83304cb6711eb7c44bda56c307969691, type: 2}
   loc4: {fileID: 4214924525277774, guid: dbc9c050fd6617d4e93a9d6d4d0086b8, type: 2}
   gmEventSystem: {fileID: 745818226}
+  spawnRedPrefab: {fileID: 123640, guid: 9242b15a276bc5a4babd09239e5fa709, type: 2}
+  spawnBluePrefab: {fileID: 100672, guid: 7dc0b63f67faaf9479803bcfdff7f71e, type: 2}
   timeBetweenInputs: 0.15
   deadZone: 0.9
   winScreenUI: {fileID: 1895102386}
