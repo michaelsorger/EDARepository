@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     //private Vector2 knockLeft = new Vector2(-1, 1);
     //private GameObject _health = null;
 	// Use this for initialization
-    private Transform initialTransform;
+    public Transform initialTransform;
     private Vector3 initialPlayerSpawn;
 
 	void Awake ()

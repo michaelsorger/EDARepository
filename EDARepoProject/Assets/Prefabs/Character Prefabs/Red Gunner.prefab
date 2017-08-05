@@ -448,6 +448,7 @@ MonoBehaviour:
   Right_Trigger_Axis: Right Trigger Gunner Red
   A_Axis: A Gunner Red
   B_Axis: B Gunner Red
+  _currentDirection: Left
 --- !u!114 &114615235058161960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,6 +584,8 @@ MonoBehaviour:
   teamColor: 
   currentHealth: 0
   maxHealth: 20
+  initialTransform: {fileID: 4243127389208536, guid: 97d02fa8bb733c848977c3c647f77ccb,
+    type: 2}
 --- !u!114 &114974868477354106
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,6 +8,8 @@ using UnityEngine.EventSystems;
 
 public class GameMaster : MonoBehaviour
 {
+    public GameObject ParticleSpawnRed;
+    public GameObject ParticleSpawnBlue;
     public int spawnDelay = 0;
     public List<string> playerList = new List<string>();
 
@@ -189,6 +191,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
            // playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + "lt" + PlayerPrefs.GetString("Red1"));
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject RedSpawn = Instantiate(ParticleSpawnRed, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(RedSpawn, 3f);
         }
         else if (player == "Blue Brute(Clone)" || player == "Blue Brute")
         {
@@ -200,6 +205,10 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject BlueSpawn = Instantiate(ParticleSpawnBlue, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(BlueSpawn, 3f);
+
         }
         else if (player == "Red Gunner(Clone)" || player == "Red Gunner")
         {
@@ -211,6 +220,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             playerToSpawn.transform.position = new Vector3(spawnPoint.x, spawnPoint.y, spawnPoint.z);
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject RedSpawn = Instantiate(ParticleSpawnRed, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(RedSpawn, 3f);
         }
         else if (player == "Blue Gunner(Clone)" || player == "Blue Gunner")
         {
@@ -222,6 +234,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject BlueSpawn = Instantiate(ParticleSpawnBlue, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(BlueSpawn, 3f);
         }
         else if (player == "Red Knight(Clone)" || player == "Red Knight")
         {
@@ -233,6 +248,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject RedSpawn = Instantiate(ParticleSpawnRed, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(RedSpawn, 3f);
         }
         else if (player == "Blue Knight(Clone)" || player == "Blue Knight")
         {
@@ -244,6 +262,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject BlueSpawn = Instantiate(ParticleSpawnBlue, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(BlueSpawn, 3f);
         }
         else if (player == "Red Amazonian(Clone)" || player == "Red Amazonian")
         {
@@ -255,6 +276,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject RedSpawn = Instantiate(ParticleSpawnRed, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(RedSpawn, 3f);
         }
         else if (player == "Blue Amazonian(Clone)" || player == "Blue Amazonian")
         {
@@ -266,6 +290,9 @@ public class GameMaster : MonoBehaviour
             playerToSpawn.GetComponent<AnimInputController>().A_Axis = PlayerPrefs.GetString(player + " a axis");
             playerToSpawn.GetComponent<AnimInputController>().B_Axis = PlayerPrefs.GetString(player + " b axis");
             gm.playerList.Add(player);
+            Vector3 SpawnLoc = new Vector3(playerToSpawn.transform.position.x, playerToSpawn.transform.position.y, playerToSpawn.transform.position.z);
+            GameObject BlueSpawn = Instantiate(ParticleSpawnBlue, SpawnLoc, Quaternion.identity) as GameObject;
+            Destroy(BlueSpawn, 3f);
         }
         else if (player == "Red Blade Master(Clone)" || player == "Red Blade Master")
         {

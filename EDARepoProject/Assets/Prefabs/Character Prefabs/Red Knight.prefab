@@ -443,6 +443,8 @@ MonoBehaviour:
   teamColor: 
   currentHealth: 0
   maxHealth: 40
+  initialTransform: {fileID: 4243127389208536, guid: 97d02fa8bb733c848977c3c647f77ccb,
+    type: 2}
 --- !u!114 &114292632644313794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -461,6 +463,7 @@ MonoBehaviour:
   Right_Trigger_Axis: Right Trigger Knight Red
   A_Axis: A Knight Red
   B_Axis: B Knight Red
+  _currentDirection: Left
 --- !u!114 &114609971648746734
 MonoBehaviour:
   m_ObjectHideFlags: 1

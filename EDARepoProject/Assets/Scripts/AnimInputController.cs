@@ -28,8 +28,8 @@ public class AnimInputController : MonoBehaviour
 	private Animator _anim;
 	private CharacterController2D _controller;
 	private string oldStateName = "";
-	//Setting player direction
-	private string _currentDirection = "Left";
+    //Setting player direction
+    public string _currentDirection;
 
     private float move = 0f;
 
@@ -38,7 +38,7 @@ public class AnimInputController : MonoBehaviour
 	void Start()
 	{
         //getAxisNamesFromPlayerPrefs()
-
+        
 		_anim = GetComponent<Animator>();
 		_controller = GetComponent<CharacterController2D>();
 	}
@@ -227,6 +227,9 @@ public class AnimInputController : MonoBehaviour
 	}
 	public string getFacing()
 	{
+        //Debug.Log("Current Direction: " + _currentDirection);
+        if (_currentDirection == null)
+            _currentDirection = "Left";        
 		return _currentDirection;
 	}
 

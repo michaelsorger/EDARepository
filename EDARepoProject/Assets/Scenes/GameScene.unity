@@ -440,6 +440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3869540cd4db3634fb8800163b11042c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ParticleSpawnRed: {fileID: 123640, guid: 9242b15a276bc5a4babd09239e5fa709, type: 2}
+  ParticleSpawnBlue: {fileID: 100672, guid: 7dc0b63f67faaf9479803bcfdff7f71e, type: 2}
   spawnDelay: 0
   playerList: []
   futureLevel: {fileID: 1437151097519452, guid: e3d532701df581f48bfb3fcbba104a35,

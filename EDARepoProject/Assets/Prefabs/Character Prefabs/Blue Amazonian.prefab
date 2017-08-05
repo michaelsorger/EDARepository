@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901949818402668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.81, y: -4.13, z: 0}
+  m_LocalPosition: {x: 1.1428969, y: -2.4453893, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 4584712162459710}
@@ -180,7 +180,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.033893824}
+  m_Offset: {x: 0, y: 0.022652477}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -191,7 +191,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4, y: 0.8209477}
+  m_Size: {x: 0.4, y: 0.64108545}
   m_EdgeRadius: 0
 --- !u!82 &82459593227902258
 AudioSource:
@@ -307,6 +307,8 @@ MonoBehaviour:
   teamColor: 
   currentHealth: 0
   maxHealth: 25
+  initialTransform: {fileID: 4243127389208536, guid: 97d02fa8bb733c848977c3c647f77ccb,
+    type: 2}
 --- !u!114 &114123566851444324
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,12 +349,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1395099801246022, guid: fde8a94cf3907ac4d8937d8acf7bfc67,
     type: 2}
-  bulletTrigger: {fileID: 50395760176248916, guid: 25b52c7c3ba08154fa14322e8a7d05e9,
+  bulletTrigger: {fileID: 50526095235224602, guid: 8e4fad03d5245a349818cf1c942cc19f,
     type: 2}
-  bulletPlatform: {fileID: 50495778198093134, guid: 96f76cbb1938fd14cb6065d2c9cc3403,
+  bulletPlatform: {fileID: 50793270007379280, guid: eaa5c76532c589e448099cc3bec0833c,
     type: 2}
   bulletSpawn: {fileID: 4584712162459710}
-  batCollider: {fileID: 0}
+  batCollider: {fileID: 61567143196136518, guid: c8f89be956e4b9146a415202a160e626,
+    type: 2}
+  audio1: {fileID: 82459593227902258}
+  audio2: {fileID: 0}
+  audio3: {fileID: 0}
 --- !u!114 &114629661202207920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,6 +425,7 @@ MonoBehaviour:
   Right_Trigger_Axis: Right Trigger Amazonian Blue
   A_Axis: A Amazonian Blue
   B_Axis: B Amazonian Blue
+  _currentDirection: Right
 --- !u!114 &114750327552096378
 MonoBehaviour:
   m_ObjectHideFlags: 1

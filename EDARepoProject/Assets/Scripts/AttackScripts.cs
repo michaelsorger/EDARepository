@@ -14,8 +14,6 @@ public class AttackScripts : MonoBehaviour {
     public AudioSource audio1;
     public AudioSource audio2;
     public AudioSource audio3;
-    
-
 
     //   private float attackSpeed = 1f;
     private AnimInputController _inputController;
@@ -26,20 +24,18 @@ public class AttackScripts : MonoBehaviour {
     private Rigidbody2D platformPrefab;
     
 
-    
-
     // Use this for initialization
     void Start ()
 	{
-        AudioSource[] audioSources = GetComponents<AudioSource>();
-        audio1 = audioSources[0];
-        audio2 = audioSources[1];
-        audio3 = audioSources[2];
-
         _inputController = GetComponent<AnimInputController>();
         originalBatSize = batCollider.GetComponent<BoxCollider2D>().size;
         originalBatOffset = batCollider.GetComponent<BoxCollider2D>().offset;
         batCollider.enabled = false;
+
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audio1 = audioSources[0];
+        audio2 = audioSources[1];
+        audio3 = audioSources[2];
     }
 	
 	// Update is called once per frame
@@ -48,9 +44,11 @@ public class AttackScripts : MonoBehaviour {
 
     }
 
+
 	private void Shoot()
 	{
         // Debug.Log("Started bullet a shot!");
+        Debug.Log("Input Facing" + _inputController.getFacing());
         //if the player is facing to the right.
         if (_inputController.getFacing() == "Right")
 		{
@@ -123,6 +121,7 @@ public class AttackScripts : MonoBehaviour {
 
     public void fireBow()
     {
+        //audio3.Play();
         Shoot();
     }
 

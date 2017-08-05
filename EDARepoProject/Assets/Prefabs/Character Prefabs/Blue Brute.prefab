@@ -536,6 +536,7 @@ MonoBehaviour:
   Right_Trigger_Axis: Right Trigger Brute Blue
   A_Axis: A Brute Blue
   B_Axis: B Brute Blue
+  _currentDirection: Left
 --- !u!114 &114140157685580182
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -569,6 +570,8 @@ MonoBehaviour:
   teamColor: 
   currentHealth: 0
   maxHealth: 30
+  initialTransform: {fileID: 4243127389208536, guid: 97d02fa8bb733c848977c3c647f77ccb,
+    type: 2}
 --- !u!114 &114288043693919626
 MonoBehaviour:
   m_ObjectHideFlags: 1
